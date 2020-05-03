@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jinay's Blog</title>
+</head>
+
+<body>
+    <h1>Home</h1>
+    {{#each posts}}
+    <div>
+        <a href="posts/{{ this.basename }}.html">
+            <h3>{{ this.title }}</h3>
+        </a>
+    </div>
+    {{/each}}
+</body>
+
+</html>

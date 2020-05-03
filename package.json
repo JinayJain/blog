@@ -1,0 +1,19 @@
+{
+    "name": "blog",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "build": "node index.js",
+        "deploy": "gh-pages -d build"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "front-matter": "^3.1.0",
+        "handlebars": "^4.7.6",
+        "highlight.js": "^10.0.1",
+        "marked": "^1.0.0"
+    },
+    "devDependencies": {
+        "gh-pages": "^2.2.0"
+    }
+}
