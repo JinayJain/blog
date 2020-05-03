@@ -2,6 +2,7 @@
     "name": "blog",
     "version": "1.0.0",
     "main": "index.js",
+"homepage": "http://jinayjain.github.io/blog",
     "scripts": {
         "build": "node index.js",
         "deploy": "gh-pages -d build"

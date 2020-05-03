@@ -25,4 +25,4 @@ const homeTemplate = Handlebars.compile(
     fs.readFileSync("./views/home.hbs", "utf8")
 );
 
-fs.writeFileSync(`${builddir}/home.html`, homeTemplate({ posts }));
+fs.writeFileSync(`${builddir}/index.html`, homeTemplate({ posts }));
