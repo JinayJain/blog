@@ -1,15 +1,31 @@
 const fm = require("front-matter");
 const path = require("path");
 const fs = require("fs");
-const marked = require("marked");
+const hljs = require("highlight.js");
+const mdkatex = require("markdown-it-katex");
 
-marked.setOptions({
-    highlight: function (code, lang) {
-        const hljs = require("highlight.js");
-        const validLanguage = hljs.getLanguage(lang) ? lang : "plaintext";
-        return hljs.highlight(validLanguage, code).value;
+var md = require("markdown-it")({
+    typographer: true,
+    linkify: true,
+    highlight: function (str, lang) {
+        if (lang && hljs.getLanguage(lang)) {
+            try {
+                return (
+                    '<pre class="hljs"><code>' +
+                    hljs.highlight(lang, str, true).value +
+                    "</code></pre>"
+                );
+            } catch (__) {}
+        }
+
+        return (
+            '<pre class="hljs"><code>' +
+            md.utils.escapeHtml(str) +
+            "</code></pre>"
+        );
     },
 });
+md.use(mdkatex);
 
 function createPost(postPath) {
     let post = {};
@@ -17,7 +33,7 @@ function createPost(postPath) {
 
     const content = fm(source);
     const attribs = content.attributes;
-    post.content = marked(content.body);
+    post.content = md.render(content.body);
     post.title = attribs.title;
     post.author = attribs.author;
     post.path = postPath;

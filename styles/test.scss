@@ -1,0 +1,14 @@
+@import "global";
+
+.content {
+    max-width: 1000px;
+    margin: auto;
+}
+
+code {
+    font-family: $monospaceFont;
+}
+
+.hljs {
+    font-size: 0.8em;
+}

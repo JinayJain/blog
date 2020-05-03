@@ -14,6 +14,8 @@ const postTemplate = Handlebars.compile(
     fs.readFileSync("./views/post.hbs", "utf8")
 );
 
+// TODO: clear build/posts and build/styles for compilation output
+
 posts.forEach((post) => {
     console.log(`Compiling ${post.path}...`);
     const compiled = postTemplate(post);

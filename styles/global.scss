@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&family=Spartan:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+$titleFont: "Spartan", sans-serif;
+$monospaceFont: "Space Mono", monospace;
+$textFont: "Rubik", sans-serif;
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        font-family: $titleFont;
+    }
+}
+
+html,
+body {
+    font-size: 16px;
+    font-family: $textFont;
+}

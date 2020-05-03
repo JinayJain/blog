@@ -2,19 +2,25 @@
     "name": "blog",
     "version": "1.0.0",
     "main": "index.js",
-"homepage": "http://jinayjain.github.io/blog",
+    "homepage": "http://jinayjain.github.io/blog",
     "scripts": {
-        "build": "node index.js",
-        "deploy": "gh-pages -d build"
+        "build": "node index.js && node-sass styles -o build/styles",
+        "watch": "nodemon index.js & node-sass -w styles -o build/styles",
+        "deploy": "yarn build && gh-pages -d build"
     },
     "license": "MIT",
     "dependencies": {
         "front-matter": "^3.1.0",
         "handlebars": "^4.7.6",
         "highlight.js": "^10.0.1",
-        "marked": "^1.0.0"
+        "markdown-it": "^10.0.0",
+        "markdown-it-katex": "^2.0.3",
+        "node-sass": "^4.14.0"
     },
     "devDependencies": {
         "gh-pages": "^2.2.0"
+    },
+    "nodemonConfig": {
+        "ext": "js,json,md,hbs"
     }
 }
