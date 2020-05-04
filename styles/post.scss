@@ -1,0 +1,45 @@
+@import "global";
+
+.header {
+    margin-bottom: 3rem;
+}
+
+.title-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+
+    h1,
+    h3 {
+        margin-bottom: 0;
+    }
+}
+
+.title {
+    color: $secondary;
+    font-size: 2.5rem;
+}
+
+.date {
+    font-family: $monospaceFont;
+    color: rgb(164, 189, 171);
+}
+
+.content {
+    max-width: 1000px;
+    margin: auto;
+
+    @media (max-width: 1200px) {
+        margin: 5%;
+        max-width: none;
+    }
+}
+
+code {
+    font-family: $monospaceFont;
+}
+
+.hljs {
+    border-radius: 5px;
+}
