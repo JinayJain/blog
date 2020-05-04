@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/post.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/an-old-hope.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+    <title>How I Built My Blog (WIP)</title>
+</head>
+
+<body>
+    <div class="content">
+        <div class="header">
+
+            <div class="title-bar">
+                <h1 class="title">How I Built My Blog (WIP)</h1>
+                <h3><a href="../..">home</a></h3>
+            </div>
+            <h3 class="author">Jinay Jain<span class="date"> - May 4, 2020</span></h3>
+        </div>
+        <p>Blogs are almost never written in pure HTML. Behind every Medium, Wordpress,
+or Blogger post lies some system that converts a human-friendly document into
+something more computer friendly. Like a program compiler, they translate and
+link different files that represent your blog into a single site that your
+readers will see. To gain a deeper understanding of how exactly these systems
+operate, I decided to build my own system. How hard can it be? Before I dive
+into the technical explanation of my blog, I’d like to demonstrate some of
+the things it can do.</p>
+<p>If you would like, you can jump straight to the <a href="#how-it-works">technical explanation</a></p>
+<h2>Images</h2>
+<p><img src="quokka.jpg" alt="quokka"></p>
+<p>Of course, any blog needs a way to handle images or graphics.</p>
+<h2>Code</h2>
+<p>A core feature of many technical blogs, I wanted to have a clean way of
+displaying code snippets in tandem with my blog writing. Each code block is
+automatically highlighted according to what language it’s in.</p>
+<p><strong>C++</strong></p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Hello, world"</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p><strong>Python</strong></p>
+<pre class="hljs"><code><span class="hljs-keyword">if</span> foo:
+    print(<span class="hljs-string">"Hello, world"</span>)
+<span class="hljs-keyword">else</span>:
+    print(<span class="hljs-string">"Goodbye, world"</span>)
+</code></pre>
+<p><strong>HTML</strong></p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Hello, world<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>I can even reference code inline: <code>int x = 5;</code></p>
+<h2>Math</h2>
+<p>In some cases, I might need equations to support my explanations. Using LaTeX
+syntax, I can embed math into my posts. Once again, they can either be inline
+or displayed as a centered block.</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>=</mo><mo>−</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>N</mi></mrow></mfrac><msub><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow></msub><mrow><mi>N</mi></mrow><mo>[</mo><msub><mi>y</mi><mi>i</mi></msub><mi>log</mi><mo>(</mo><msub><mi>p</mi><mi>i</mi></msub><mo>)</mo><mo>+</mo><mo>(</mo><mn>1</mn><mo>−</mo><msub><mi>y</mi><mi>i</mi></msub><mo>)</mo><mi>log</mi><mo>(</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mi>i</mi></msub><mo>)</mo><mo>]</mo></mrow><annotation encoding="application/x-tex">L = - \frac{1}{N} \sum_{i=1}{N} [y_i \log (p_i) + (1 - y_i) \log (1 - p_i)] 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.32144em;"></span><span class="strut bottom" style="height:2.599109em;vertical-align:-1.277669em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit">L</span><span class="mrel">=</span><span class="mord">−</span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathit" style="margin-right:0.10903em;">N</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mop op-limits"><span class="vlist"><span style="top:1.1776689999999999em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit">i</span><span class="mrel">=</span><span class="mord mathrm">1</span></span></span></span><span style="top:-0.000005000000000143778em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span><span class="op-symbol large-op mop">∑</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.10903em;">N</span></span><span class="mopen">[</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord"><span class="mord mathit">p</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span><span class="mbin">+</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mbin">−</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mbin">−</span><span class="mord"><span class="mord mathit">p</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span><span class="mclose">]</span></span></span></span></span></p>
+<p>Here is an inline equation: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>=</mo><mi>m</mi><mi>x</mi><mo>+</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">y = mx+b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mrel">=</span><span class="mord mathit">m</span><span class="mord mathit">x</span><span class="mbin">+</span><span class="mord mathit">b</span></span></span></span></p>
+<h1 id="how-it-works">How It Works</h1>
+<p>The main idea behind this project is to build a <strong>static site generator</strong>,
+something that will compile my blogposts into a single, deployable website.
+The term, though, can mean many different things, and I had to answer some
+questions before I started building.</p>
+<ol>
+<li>How will I write my blogposts?</li>
+<li>What tools will I use to compile the blog?</li>
+<li>How will I deploy the blog?</li>
+</ol>
+<p>What I ended up choosing was to use Markdown as my syntax for writing, NodeJS
+to build the project, and GitHub pages to deploy (using the <code>gh-pages</code> NPM
+package).</p>
+
+    </div>
+</body>
+
+</html>

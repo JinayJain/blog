@@ -2,6 +2,9 @@
 
 .header {
     margin-bottom: 3rem;
+    .author {
+        margin-top: 1rem;
+    }
 }
 
 .title-bar {
@@ -34,6 +37,12 @@
         margin: 5%;
         max-width: none;
     }
+
+    @for $i from 1 through 3 {
+        h#{$i} {
+            margin-top: 3rem;
+        }
+    }
 }
 
 code {
@@ -42,4 +51,19 @@ code {
 
 .hljs {
     border-radius: 5px;
+}
+
+.katex-display {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 }

@@ -11,7 +11,7 @@ $primaryDark: #1a936fff;
 $primary: #88d498ff;
 $primaryLight: #c6dabfff;
 $light: #f3e9d2ff;
-$background: rgb(255, 245, 232);
+$background: rgb(243, 228, 210);
 
 @for $i from 1 through 6 {
     h#{$i} {
@@ -25,6 +25,7 @@ body {
     font-size: 16px;
     font-family: $textFont;
     background-color: $background;
+    scroll-behavior: smooth;
 }
 
 a {

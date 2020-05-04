@@ -15,15 +15,18 @@ const postTemplate = Handlebars.compile(
 );
 
 // TODO: clear build/posts and build/styles for compilation output
-fs.rmdirSync(`${builddir}/posts`, {
-    recursive: true,
-});
-fs.mkdirSync(`${builddir}/posts`);
+// fs.rmdirSync(`${builddir}/posts`, {
+//     recursive: true,
+// });
+// fs.mkdirSync(`${builddir}/posts`);
 
+posts.sort((a, b) => {
+    return b.epochTime - a.epochTime;
+});
 posts.forEach((post) => {
     console.log(`Compiling ${post.path}...`);
     const compiled = postTemplate(post);
-    fs.mkdirSync(`${builddir}/posts/${post.basename}`);
+    // fs.mkdirSync(`${builddir}/posts/${post.basename}`);
     fs.writeFileSync(`${builddir}/posts/${post.basename}/index.html`, compiled);
 });
 console.log("Posts compiled.");

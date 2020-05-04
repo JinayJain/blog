@@ -3,6 +3,7 @@ const path = require("path");
 const fs = require("fs");
 const hljs = require("highlight.js");
 const mdkatex = require("markdown-it-katex");
+const mdattrs = require("markdown-it-attrs");
 const dateFormat = require("dateformat");
 
 var md = require("markdown-it")({
@@ -27,6 +28,7 @@ var md = require("markdown-it")({
     },
 });
 md.use(mdkatex);
+md.use(mdattrs);
 
 function createPost(postPath) {
     let post = {};

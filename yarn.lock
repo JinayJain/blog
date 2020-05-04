@@ -733,6 +733,11 @@ map-obj@^1.0.0, map-obj@^1.0.1:
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
   integrity sha1-2TPOuSBdgr3PSIb2dCvcK03qFG0=
 
+markdown-it-attrs@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/markdown-it-attrs/-/markdown-it-attrs-3.0.2.tgz#55a466b2b60d755b2a77288dff175e741fc1143d"
+  integrity sha512-q45vdXU9TSWaHgFkWEFM97YHEoCmOyG9csLLdv3oVC6ARjT77u4wfng9rRtSOMb5UpxzT7zTX5GBbwm15H40dw==
+
 markdown-it-katex@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/markdown-it-katex/-/markdown-it-katex-2.0.3.tgz#d7b86a1aea0b9d6496fab4e7919a18fdef589c39"
