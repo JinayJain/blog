@@ -28,7 +28,8 @@ html,
 body {
   font-size: 16px;
   font-family: "Rubik", sans-serif;
-  background-color: #fff5e8; }
+  background-color: #f3e4d2;
+  scroll-behavior: smooth; }
 
 a {
   color: inherit;
