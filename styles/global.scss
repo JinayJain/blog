@@ -5,9 +5,18 @@ $titleFont: "Spartan", sans-serif;
 $monospaceFont: "Space Mono", monospace;
 $textFont: "Rubik", sans-serif;
 
+$secondary: #114b5fff;
+$secondaryLight: rgb(45, 156, 173);
+$primaryDark: #1a936fff;
+$primary: #88d498ff;
+$primaryLight: #c6dabfff;
+$light: #f3e9d2ff;
+$background: rgb(255, 245, 232);
+
 @for $i from 1 through 6 {
     h#{$i} {
         font-family: $titleFont;
+        color: $primaryDark;
     }
 }
 
@@ -15,4 +24,13 @@ html,
 body {
     font-size: 16px;
     font-family: $textFont;
+    background-color: $background;
+}
+
+a {
+    color: inherit;
+    text-decoration: underline dotted;
+    &:hover {
+        color: $secondary;
+    }
 }

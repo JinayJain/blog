@@ -2,6 +2,7 @@
 title: It's a work in progress...
 author: Jinay Jain
 description: A demonstration of what features I've added to my blog generation system.
+date: 1588554766
 ---
 
 Let's be honest. No one writes their blogs in pure HTML anymore. Most tech and non-tech bloggers out there use a content management system (WordPress, Drupal, Medium) to edit their content without editing real code. Each of these CMS systems parse the posts as input and transform them into webpages.
@@ -77,6 +78,12 @@ Now I'm just putting random stuff cause it looks cool.
 
 $$
 \cos x = \sum\limits_{n = 0}^\infty  {\frac{{\left( { - 1} \right)^n x^{2n} }}{{\left( {2n} \right)!}}}
+$$
+
+Ah yes of course.
+
+$$
+- \frac{{\hbar ^2 }}{{2m}}\frac{{\partial ^2 \psi (x,t)}}{{\partial x^2 }} + U(x)\psi (x,t) = i\hbar \frac{{\partial \psi (x,t)}}{{\partial t}}
 $$
 
 Automatically rendered links: google.com

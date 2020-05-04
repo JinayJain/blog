@@ -3,6 +3,7 @@ const path = require("path");
 const fs = require("fs");
 const hljs = require("highlight.js");
 const mdkatex = require("markdown-it-katex");
+const dateFormat = require("dateformat");
 
 var md = require("markdown-it")({
     typographer: true,
@@ -36,6 +37,10 @@ function createPost(postPath) {
     post.content = md.render(content.body);
     post.title = attribs.title;
     post.author = attribs.author;
+    post.description = attribs.description;
+    post.epochTime = attribs.date * 1000;
+    console.log(post.epochTime);
+    post.dateString = dateFormat(new Date(post.epochTime), "mediumDate");
     post.path = postPath;
     post.basename = path.basename(postPath, ".md");
 

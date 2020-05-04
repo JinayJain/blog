@@ -1,1 +1,40 @@
 @import "global";
+
+#blog-title {
+    font-size: 3rem;
+    text-align: center;
+
+    a {
+        text-decoration: dotted underline 4px;
+    }
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    color: $secondary;
+
+    a:hover {
+        color: $secondaryLight;
+    }
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.post {
+    margin-bottom: 2rem;
+    .post-title {
+        margin-bottom: 5px;
+    }
+    .post-date {
+        font-family: $monospaceFont;
+        color: rgb(164, 189, 171);
+    }
+    .post-description {
+        margin-top: 0;
+    }
+}

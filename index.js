@@ -15,14 +15,20 @@ const postTemplate = Handlebars.compile(
 );
 
 // TODO: clear build/posts and build/styles for compilation output
+fs.rmdirSync(`${builddir}/posts`, {
+    recursive: true,
+});
+fs.mkdirSync(`${builddir}/posts`);
 
 posts.forEach((post) => {
     console.log(`Compiling ${post.path}...`);
     const compiled = postTemplate(post);
-    fs.writeFileSync(`${builddir}/posts/${post.basename}.html`, compiled);
+    fs.mkdirSync(`${builddir}/posts/${post.basename}`);
+    fs.writeFileSync(`${builddir}/posts/${post.basename}/index.html`, compiled);
 });
 console.log("Posts compiled.");
 
+console.log("Compiling home page.");
 const homeTemplate = Handlebars.compile(
     fs.readFileSync("./views/home.hbs", "utf8")
 );

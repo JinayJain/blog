@@ -9,14 +9,23 @@
 </head>
 
 <body>
-    <h1>Jinay's Blog</h1>
-    {{#each posts}}
-    <div>
-        <a href="posts/{{ this.basename }}.html">
-            <h3>{{ this.title }}</h3>
-        </a>
+    <div class="container">
+        <h1 id="blog-title"><a href="/">Jinay Jain</a></h1>
+        {{!-- <div class="links">
+            <a href="/">my website</a>
+        </div> --}}
+
+        <h1>Posts</h1>
+        {{#each posts}}
+        <div class="post">
+            <div class="post-header">
+                <h3 class="post-title"><a href="posts/{{ this.basename }}">{{ this.title }}</a><span class="post-date">
+                        - {{ this.dateString }}</span></h3>
+            </div>
+            <p class="post-description">{{ this.description }}</p>
+        </div>
+        {{/each}}
     </div>
-    {{/each}}
 </body>
 
 </html>
