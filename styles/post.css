@@ -41,6 +41,7 @@ a {
 
 .title-bar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline; }
   .title-bar h1,
@@ -58,6 +59,10 @@ a {
 .content {
   max-width: 1000px;
   margin: auto; }
+  @media (max-width: 1200px) {
+    .content {
+      margin: 5%;
+      max-width: none; } }
 
 code {
   font-family: "Space Mono", monospace; }
