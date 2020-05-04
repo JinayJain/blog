@@ -1,24 +1,65 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono&family=Spartan:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 h1 {
-  font-family: "Spartan", sans-serif; }
+  font-family: "Spartan", sans-serif;
+  color: #1a936fff; }
 
 h2 {
-  font-family: "Spartan", sans-serif; }
+  font-family: "Spartan", sans-serif;
+  color: #1a936fff; }
 
 h3 {
-  font-family: "Spartan", sans-serif; }
+  font-family: "Spartan", sans-serif;
+  color: #1a936fff; }
 
 h4 {
-  font-family: "Spartan", sans-serif; }
+  font-family: "Spartan", sans-serif;
+  color: #1a936fff; }
 
 h5 {
-  font-family: "Spartan", sans-serif; }
+  font-family: "Spartan", sans-serif;
+  color: #1a936fff; }
 
 h6 {
-  font-family: "Spartan", sans-serif; }
+  font-family: "Spartan", sans-serif;
+  color: #1a936fff; }
 
 html,
 body {
   font-size: 16px;
-  font-family: "Rubik", sans-serif; }
+  font-family: "Rubik", sans-serif;
+  background-color: #fff5e8; }
+
+a {
+  color: inherit;
+  text-decoration: underline dotted; }
+  a:hover {
+    color: #114b5fff; }
+
+#blog-title {
+  font-size: 3rem;
+  text-align: center; }
+  #blog-title a {
+    text-decoration: dotted underline 4px; }
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: #114b5fff; }
+  .links a:hover {
+    color: #2d9cad; }
+
+.container {
+  max-width: 1000px;
+  margin: auto; }
+
+.post {
+  margin-bottom: 2rem; }
+  .post .post-title {
+    margin-bottom: 5px; }
+  .post .post-date {
+    font-family: "Space Mono", monospace;
+    color: #a4bdab; }
+  .post .post-description {
+    margin-top: 0; }
