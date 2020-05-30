@@ -74,7 +74,8 @@ a {
     margin-top: 3rem; }
 
 code {
-  font-family: "Space Mono", monospace; }
+  font-family: "Space Mono", monospace;
+  font-variant-ligatures: none; }
 
 .hljs {
   border-radius: 5px; }

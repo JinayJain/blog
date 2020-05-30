@@ -65,8 +65,8 @@ or displayed as a centered block.</p>
 <h1 id="how-it-works">How It Works</h1>
 <p>The main idea behind this project is to build a <strong>static site generator</strong>,
 something that will compile my blogposts into a single, deployable website.
-The term, though, can mean many different things, and I had to answer some
-questions before I started building.</p>
+The term, though, can mean many different things depending on how the system
+is implemented, so I had to answer some questions before I started building.</p>
 <ol>
 <li>How will I write my blogposts?</li>
 <li>What tools will I use to compile the blog?</li>
@@ -74,7 +74,80 @@ questions before I started building.</p>
 </ol>
 <p>What I ended up choosing was to use Markdown as my syntax for writing, NodeJS
 to build the project, and GitHub pages to deploy (using the <code>gh-pages</code> NPM
-package).</p>
+package). These initial choices outlined the general series of steps needed to assemble my blog generator.</p>
+<h2>Rendering Markdown Files</h2>
+<p><a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> (the syntax language for
+GitHub README’s and many texting platforms), has a relatively simple syntax
+that enables a writer to define very basic text editing features: headers,
+bolding/italics, links, or code. This allows programmers to easily convert Markdown into other formats like LaTeX documents, Beamer presentations, and HTML pages. In fact, the <a href="https://pandoc.org/">pandoc</a> tool includes native support for converting markdown into a plethora of other file formats, allowing the user to control much of the styling and formatting of the document.</p>
+<p>If I wanted to, I might have created a simple parser for Markdown myself.
+But—of course—there was a neat NPM package that did the work for me,
+<a href="https://github.com/markdown-it/markdown-it">markdown-it</a>. In my code, I
+simply read the desired Markdown file as a string and the simple
+<code>md.render(source)</code> would parse the document and convert it into HTML tags. <code>markdown-it</code> has several extensions that add extra syntax support for more specific needs. I added the <code>markdown-it-katex</code> package to include math equation rendering.</p>
+<p>&lt;/&gt;
+While rendering, a line like</p>
+<pre class="hljs"><code>$$ f(x)=\int_{0}^{1} x^2 dx $$
+</code></pre>
+<p>is converted into</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><msubsup><mo>∫</mo><mrow><mn>0</mn></mrow><mrow><mn>1</mn></mrow></msubsup><msup><mi>x</mi><mn>2</mn></msup><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">f(x)=\int_{0}^{1} x^2 dx
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.4251079999999998em;"></span><span class="strut bottom" style="height:2.337358em;vertical-align:-0.91225em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mrel">=</span><span class="mop"><span class="op-symbol large-op mop" style="margin-right:0.44445em;top:-0.0011249999999999316em;">∫</span><span class="vlist"><span style="top:0.91225em;margin-left:-0.44445em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm">0</span></span></span></span><span style="top:-0.9739999999999999em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord mathit">d</span><span class="mord mathit">x</span></span></span></span></span></p>
+<p>which makes life much easier than trying to explain a loss function with convoluted notation like <code>(y_i - p_i)^2</code>.</p>
+<p>I plan on adding some other syntax features as my needs evolve, but the ability to extend the core funcitonality of Markdown is why it’s such an appealing language for developers.</p>
+<h2>Capturing Post Metadata</h2>
+<p>Some information about the posts—the title, creation date, URL,
+etc.—shouldn’t be directly shown to the user, so I created a way to handle
+that data first before feeding it into <code>markdown-it</code>. Most SSG systems either
+include this metadata in separate files or within a special section in their
+Markdown called the front matter. I chose to use the latter, which meant my
+Markdown files would have a small section above the Markdown storing the
+metadata. For example, here’s the front matter for this post:</p>
+<pre class="hljs"><code>---
+title: How I Built My Blog
+author: Jinay Jain
+description: A reflection on how I created the static site generator behind this blog.
+date: 1588601471
+---
+</code></pre>
+<p>As is a general theme in this post, an NPM package called <code>front-matter</code>
+handled the retrieval of this metadata for each file, returning an object
+that contains the fields of the metadata as properties. The remaining text after the front matter is also returned, which I then feed into <code>md.render()</code>.</p>
+<h2>Styling and Formatting Posts</h2>
+<p>After <code>markdown-it</code> renders and outputs the HTML content for the post, it is embedded into the post template written in the HTML templating language Handlebars. The <code>post.hbs</code> file, which outlines the general format of a post, includes spaces for the site generator to replace with the post’s title, content, and other metadata. The file, although very small, enables me to customize how posts are formatted and include items like a static footer into each post. Currently, the code looks like this, but I can iterate and develop on it as my needs change:</p>
+<pre class="hljs"><code><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"../../styles/post.css"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">link</span>
+            <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>
+            <span class="hljs-attr">href</span>=<span class="hljs-string">"//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/an-old-hope.min.css"</span>
+        /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">link</span>
+            <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>
+            <span class="hljs-attr">href</span>=<span class="hljs-string">"https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"</span>
+        /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>{{ title }}<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"content"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"header"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"title-bar"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"title"</span>&gt;</span>{{ title }}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"../.."</span>&gt;</span>home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"author"</span>&gt;</span>
+                    {{ author }}<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"date"</span>&gt;</span> - {{ dateString }}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            {{{ content }}}
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>The styling for these posts is done through SCSS, which is compiled with the posts during the <code>build</code> script.</p>
 
     </div>
 </body>
