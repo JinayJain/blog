@@ -47,6 +47,7 @@
 
 code {
     font-family: $monospaceFont;
+    font-variant-ligatures: none;
 }
 
 .hljs {
@@ -66,4 +67,9 @@ img {
     @media (max-width: 768px) {
         width: 100%;
     }
+}
+
+.caption {
+    text-align: center;
+    font-style: italic;
 }
