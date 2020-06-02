@@ -1,5 +1,5 @@
 ---
-title: How I Built My Blog (WIP)
+title: How I Built My Blog
 author: Jinay Jain
 description: A reflection on how I created the static site generator behind this blog.
 date: 1588601471
@@ -132,11 +132,20 @@ date: 1588601471
 
 As is a general theme in this post, an NPM package called `front-matter`
 handled the retrieval of this metadata for each file, returning an object
-that contains the fields of the metadata as properties. The remaining text after the front matter is also returned, which I then feed into `md.render()`.
+that contains the fields of the metadata as properties. The remaining text
+after the front matter is also returned, which I then feed into
+`md.render()`.
 
 ## Styling and Formatting Posts
 
-After `markdown-it` renders and outputs the HTML content for the post, it is embedded into the post template written in the HTML templating language Handlebars. The `post.hbs` file, which outlines the general format of a post, includes spaces for the site generator to replace with the post's title, content, and other metadata. The file, although very small, enables me to customize how posts are formatted and include items like a static footer into each post. Currently, the code looks like this, but I can iterate and develop on it as my needs change:
+After `markdown-it` renders and outputs the HTML content for the post, it is
+embedded into the post template written in the HTML templating language
+Handlebars. The `post.hbs` file, which outlines the general format of a post,
+includes spaces for the site generator to replace with the post's title,
+content, and other metadata. The file, although very small, enables me to
+customize how posts are formatted and include items like a static footer into
+each post. Currently, the code looks like this, but I can iterate and develop
+on it as my needs change:
 
 ```html
 <!DOCTYPE html>
@@ -173,4 +182,21 @@ After `markdown-it` renders and outputs the HTML content for the post, it is emb
 </html>
 ```
 
-The styling for these posts is done through SCSS, which is compiled with the posts during the `build` script.
+The styling for these posts is done through SCSS, which is compiled with the
+posts during the `build` script. Since the `post.hbs` file imports the same
+CSS for each post, I can change the styling for all posts using a single
+`post.scss` SCSS file.
+
+# Final Thoughts
+
+Though I might have had a wider range of prebuilt features from an existing
+system like Jekyll, the satisfaction of building the features I need for my
+blog supersedes the convenience of using such a system. This post defines
+only a tentative view of what features my blog contains, and the true state
+of the SSG will be an amalgamation of what features I need from such a
+system. Once I have developed the static site generator enough, I hope to
+distribute it as open source software for others to use. But for now, it
+shall remain a practical tool for maintaining my personal blog and nothing
+more.
+
+If you would like to download or inspect the code for this blog, you can find the GitHub repository [here](https://github.com/jinayjain/blog).
