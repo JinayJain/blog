@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../styles/post.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/an-old-hope.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
-    <title>How I Built My Blog (WIP)</title>
+    <title>How I Built My Blog</title>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
         <div class="header">
 
             <div class="title-bar">
-                <h1 class="title">How I Built My Blog (WIP)</h1>
+                <h1 class="title">How I Built My Blog</h1>
                 <h3><a href="../..">home</a></h3>
             </div>
             <h3 class="author">Jinay Jain<span class="date"> - May 4, 2020</span></h3>
@@ -111,9 +111,18 @@ date: 1588601471
 </code></pre>
 <p>As is a general theme in this post, an NPM package called <code>front-matter</code>
 handled the retrieval of this metadata for each file, returning an object
-that contains the fields of the metadata as properties. The remaining text after the front matter is also returned, which I then feed into <code>md.render()</code>.</p>
+that contains the fields of the metadata as properties. The remaining text
+after the front matter is also returned, which I then feed into
+<code>md.render()</code>.</p>
 <h2>Styling and Formatting Posts</h2>
-<p>After <code>markdown-it</code> renders and outputs the HTML content for the post, it is embedded into the post template written in the HTML templating language Handlebars. The <code>post.hbs</code> file, which outlines the general format of a post, includes spaces for the site generator to replace with the post’s title, content, and other metadata. The file, although very small, enables me to customize how posts are formatted and include items like a static footer into each post. Currently, the code looks like this, but I can iterate and develop on it as my needs change:</p>
+<p>After <code>markdown-it</code> renders and outputs the HTML content for the post, it is
+embedded into the post template written in the HTML templating language
+Handlebars. The <code>post.hbs</code> file, which outlines the general format of a post,
+includes spaces for the site generator to replace with the post’s title,
+content, and other metadata. The file, although very small, enables me to
+customize how posts are formatted and include items like a static footer into
+each post. Currently, the code looks like this, but I can iterate and develop
+on it as my needs change:</p>
 <pre class="hljs"><code><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
@@ -147,7 +156,21 @@ that contains the fields of the metadata as properties. The remaining text after
     <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
-<p>The styling for these posts is done through SCSS, which is compiled with the posts during the <code>build</code> script.</p>
+<p>The styling for these posts is done through SCSS, which is compiled with the
+posts during the <code>build</code> script. Since the <code>post.hbs</code> file imports the same
+CSS for each post, I can change the styling for all posts using a single
+<code>post.scss</code> SCSS file.</p>
+<h1>Final Thoughts</h1>
+<p>Though I might have had a wider range of prebuilt features from an existing
+system like Jekyll, the satisfaction of building the features I need for my
+blog supersedes the convenience of using such a system. This post defines
+only a tentative view of what features my blog contains, and the true state
+of the SSG will be an amalgamation of what features I need from such a
+system. Once I have developed the static site generator enough, I hope to
+distribute it as open source software for others to use. But for now, it
+shall remain a practical tool for maintaining my personal blog and nothing
+more.</p>
+<p>If you would like to download or inspect the code for this blog, you can find the GitHub repository <a href="https://github.com/jinayjain/blog">here</a>.</p>
 
     </div>
 </body>
