@@ -85,8 +85,7 @@ But—of course—there was a neat NPM package that did the work for me,
 <a href="https://github.com/markdown-it/markdown-it">markdown-it</a>. In my code, I
 simply read the desired Markdown file as a string and the simple
 <code>md.render(source)</code> would parse the document and convert it into HTML tags. <code>markdown-it</code> has several extensions that add extra syntax support for more specific needs. I added the <code>markdown-it-katex</code> package to include math equation rendering.</p>
-<p>&lt;/&gt;
-While rendering, a line like</p>
+<p>While rendering, a line like</p>
 <pre class="hljs"><code>$$ f(x)=\int_{0}^{1} x^2 dx $$
 </code></pre>
 <p>is converted into</p>
