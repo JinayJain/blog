@@ -24,6 +24,11 @@
 .container {
     max-width: 1000px;
     margin: auto;
+
+    @media (max-width: 1200px) {
+        margin: 5%;
+        max-width: none;
+    }
 }
 
 .post {
@@ -33,7 +38,7 @@
     }
     .post-date {
         font-family: $monospaceFont;
-        color: rgb(164, 189, 171);
+        color: rgb(109, 150, 120);
     }
     .post-description {
         margin-top: 0;

@@ -96,7 +96,6 @@ But---of course---there was a neat NPM package that did the work for me,
 simply read the desired Markdown file as a string and the simple
 `md.render(source)` would parse the document and convert it into HTML tags. `markdown-it` has several extensions that add extra syntax support for more specific needs. I added the `markdown-it-katex` package to include math equation rendering.
 
-</>
 While rendering, a line like
 
 ```

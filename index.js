@@ -26,7 +26,9 @@ posts.sort((a, b) => {
 posts.forEach((post) => {
     console.log(`Compiling ${post.path}...`);
     const compiled = postTemplate(post);
-    // fs.mkdirSync(`${builddir}/posts/${post.basename}`);
+    if (!fs.existsSync(`${builddir}/posts/${post.basename}`)) {
+        fs.mkdirSync(`${builddir}/posts/${post.basename}`);
+    }
     fs.writeFileSync(`${builddir}/posts/${post.basename}/index.html`, compiled);
 });
 console.log("Posts compiled.");

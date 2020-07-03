@@ -26,7 +26,8 @@
 
 .date {
     font-family: $monospaceFont;
-    color: rgb(164, 189, 171);
+    font-size: smaller;
+    color: rgb(109, 150, 120);
 }
 
 .content {
@@ -43,15 +44,26 @@
             margin-top: 3rem;
         }
     }
+
+    p {
+        line-height: 150%;
+    }
 }
 
 code {
     font-family: $monospaceFont;
     font-variant-ligatures: none;
+    // background-color: rgba(200, 200, 200, 0.7);
+    padding: 0px 4px;
 }
 
 .hljs {
     border-radius: 5px;
+
+    code {
+        background-color: unset;
+        padding: unset;
+    }
 }
 
 .katex-display {

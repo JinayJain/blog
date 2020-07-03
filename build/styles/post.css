@@ -26,9 +26,9 @@ h6 {
 
 html,
 body {
-  font-size: 16px;
+  font-size: 18px;
   font-family: "Rubik", sans-serif;
-  background-color: #f3e4d2;
+  background-color: #f1e7db;
   scroll-behavior: smooth; }
 
 a {
@@ -57,7 +57,8 @@ a {
 
 .date {
   font-family: "Space Mono", monospace;
-  color: #a4bdab; }
+  font-size: smaller;
+  color: #6d9678; }
 
 .content {
   max-width: 1000px;
@@ -72,13 +73,19 @@ a {
     margin-top: 3rem; }
   .content h3 {
     margin-top: 3rem; }
+  .content p {
+    line-height: 150%; }
 
 code {
   font-family: "Space Mono", monospace;
-  font-variant-ligatures: none; }
+  font-variant-ligatures: none;
+  padding: 0px 4px; }
 
 .hljs {
   border-radius: 5px; }
+  .hljs code {
+    background-color: unset;
+    padding: unset; }
 
 .katex-display {
   overflow-x: auto;
