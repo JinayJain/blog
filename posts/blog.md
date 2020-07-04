@@ -18,7 +18,7 @@ If you would like, you can jump straight to the [technical explanation](#how-it-
 
 ## Images
 
-![quokka](quokka.jpg)
+![quokka](/images/quokka.jpg)
 
 A quokka {.caption}
 
