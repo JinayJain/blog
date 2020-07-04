@@ -53,6 +53,6 @@ body {
 
 a {
   color: inherit;
-  text-decoration: underline dotted; }
+  text-decoration: underline; }
   a:hover {
     color: #114b5fff; }

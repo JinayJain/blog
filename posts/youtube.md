@@ -3,6 +3,7 @@ title: Uncovering the YouTube Algorithm
 author: Jinay Jain
 description: A review of the 2016 paper "Deep Neural Networks for YouTube Recommendations."
 date: 1592426364
+hidden: true
 ---
 
 # TODO https://www.youtube.com/watch?v=WK_Nr4tUtl8

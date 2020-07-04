@@ -48,7 +48,7 @@ body {
 
 a {
     color: inherit;
-    text-decoration: underline dotted;
+    text-decoration: underline;
     &:hover {
         color: $secondary;
     }
