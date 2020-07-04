@@ -75,6 +75,9 @@ a {
   color: #114b5fff;
   font-size: 2.5rem;
   margin-right: 1rem; }
+  @media (max-width: 1200px) {
+    .title {
+      font-size: 2rem; } }
 
 .links {
   display: flex; }
