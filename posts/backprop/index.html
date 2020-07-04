@@ -25,8 +25,9 @@
             </div>
             <h3 class="author">Jinay Jain<span class="date"> - Jun 30, 2020</span></h3>
         </div>
-        <article>
-            <p>Before reading, you can try out my <a href="https://jinay.dev/backprop-vis">interactive visualization tool</a></p>
+        <p>Before reading, you can try out my <a href="https://jinay.dev/backprop-vis">interactive visualization
+tool</a> for a primer on what I’ll discuss
+below.</p>
 <p>At their core, neural networks are functions. They take some input, perform a
 series of computations, and produce an output. Though most networks operate
 in the realm of vectors and matrices, it can be a useful exercise to see them
@@ -50,8 +51,16 @@ parent.</p>
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit">h</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mbin">+</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathrm">1</span><span class="mbin">+</span><span class="mord mathit">x</span></span></span></span></span></p>
 <p>Likewise, we can feed the output of one function as the input of another,
 increasing the complexity of the overall function while retaining its
-individual parts. This staged ordering creates a hierarchy of functions that
-our algorithms can harness.</p>
+individual parts.</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mn>7</mn><mi>x</mi><mo>+</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">f(x) = 7x + 3 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathrm">7</span><span class="mord mathit">x</span><span class="mbin">+</span><span class="mord mathrm">3</span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">g(x) = x^2 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8641079999999999em;"></span><span class="strut bottom" style="height:1.1141079999999999em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mi>g</mi><mo>(</mo><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>)</mo><mo>=</mo><mo>(</mo><mn>7</mn><mi>x</mi><mo>+</mo><mn>3</mn><msup><mo>)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">h(x) = g(f(x)) = (7x + 3)^2 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8641079999999999em;"></span><span class="strut bottom" style="height:1.1141079999999999em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit">h</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mclose">)</span><span class="mrel">=</span><span class="mopen">(</span><span class="mord mathrm">7</span><span class="mord mathit">x</span><span class="mbin">+</span><span class="mord mathrm">3</span><span class="mclose"><span class="mclose">)</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span></p>
+<p>Intuitively, a human would first calculate the value of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>7</mn><mi>x</mi><mo>+</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">7x+3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">7</span><span class="mord mathit">x</span><span class="mbin">+</span><span class="mord mathrm">3</span></span></span></span> before
+squaring the result. This staged ordering creates a hierarchy of functions
+that our algorithms can harness.</p>
 <p>We see this type of hierarchy building when we build models in any machine learning library. What TensorFlow calls a “model” is just a series of computations composed into a single function.</p>
 <pre class="hljs"><code>model = tf.keras.Sequential()
 
@@ -84,24 +93,39 @@ very bottom.</p>
 <p>In machine learning, this is a function called the <em>sigmoid</em>, often written
 as <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>σ</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\sigma(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">σ</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span></span></span></span>. Let’s see how we could break the sigmoid into a computation
 tree.</p>
-<p><strong>image here</strong></p>
-<p>Notice how all 5 leaf nodes are either a constant or a variable. These
+<p><img src="/images/sigmoid1.svg" alt="sigmoid"></p>
+<p>Notice how all four leaf nodes are either a constant or a variable. These
 are the most elementary parts of any composite function. We can even give the
 intermediate functions letter names to highlight how each node is built from its children.</p>
-<p><strong>image here</strong></p>
-<p><strong>equations here</strong></p>
-<h1>Take It Back Now Y’all</h1>
-<p>Now that we have observed how to compute the “forward pass” of a function, we
-can finally see how to compute the reverse using an algorithm called
+<p><img src="/images/sigmoid2.svg" alt="sigmoid with labels"></p>
+<p>The equations for our new tree would be</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>=</mo><mi>e</mi><mo separator="true">,</mo><mi>b</mi><mo>=</mo><mo>−</mo><mi>x</mi><mo separator="true">,</mo><mi>f</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mi>d</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">a=e, b=-x,f=1,d=1
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit">a</span><span class="mrel">=</span><span class="mord mathit">e</span><span class="mpunct">,</span><span class="mord mathit">b</span><span class="mrel">=</span><span class="mord">−</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mrel">=</span><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathit">d</span><span class="mrel">=</span><span class="mord mathrm">1</span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mo>=</mo><msup><mi>a</mi><mi>b</mi></msup></mrow><annotation encoding="application/x-tex">c = a^b
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8991079999999999em;"></span><span class="strut bottom" style="height:0.8991079999999999em;vertical-align:0em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit">c</span><span class="mrel">=</span><span class="mord"><span class="mord mathit">a</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">b</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>e</mi><mo>=</mo><mi>c</mi><mo>+</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">e = c+d
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit">e</span><span class="mrel">=</span><span class="mord mathit">c</span><span class="mbin">+</span><span class="mord mathit">d</span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>=</mo><mfrac><mrow><mi>f</mi></mrow><mrow><mi>e</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">g = \frac{f}{e}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.37144em;"></span><span class="strut bottom" style="height:2.05744em;vertical-align:-0.686em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mrel">=</span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathit">e</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathit" style="margin-right:0.10764em;">f</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span></span></span></span></span></p>
+<h1>The Backward Pass</h1>
+<p>Up until this point, viewing functions as hierarchies seems to add
+unnecessary abstractions on a relatively simple topic. However, now that we have
+observed how to compute the “forward pass” of a computation graph, we
+can compute the reverse using an algorithm called
 <a href="https://en.wikipedia.org/wiki/Backpropagation">backpropagation</a>.</p>
 <h2>Gradient Descent</h2>
-<p>In machine learning, the end goal has always been to minimize error on a loss
+<p>In machine learning, the end goal is to minimize error on a loss
 function, and modern software achieves this goal through an algorithm called
 <em>gradient descent</em>. Though I will not attempt to explain the entirety of
 gradient descent here, a basic understanding of how it works is essential for
 understanding backpropagation.</p>
+<h3>Additional Resources</h3>
+<p><em>This post was inspired by the great explanations of backpropagation linked below.</em></p>
+<p><a href="https://cs231n.github.io/optimization-2/">Stanford CS231n - Backpropagation, Intuitions</a></p>
+<p><a href="https://www.youtube.com/watch?v=Ilg3gGewQ5U">3Blue1Brown - What is backpropagation really doing?</a></p>
+<p><a href="https://www.youtube.com/watch?v=GlcnxUlrtek">Welch Labs - Neural Networks Demystified - Backpropagation</a></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow></mrow><annotation encoding="application/x-tex"></annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0em;"></span><span class="strut bottom" style="height:0em;vertical-align:0em;"></span><span class="base displaystyle textstyle uncramped"></span></span></span></span></p>
 
-        </article>
     </div>
     <footer class="footer"><a href="https://jinay.dev">jinay.dev</a></footer>
 </body>
