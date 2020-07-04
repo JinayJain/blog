@@ -2,34 +2,54 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 h1 {
   font-family: "Spartan", sans-serif;
-  color: #1a936fff; }
+  color: #1a936fff;
+  word-break: break-word; }
 
 h2 {
   font-family: "Spartan", sans-serif;
-  color: #1a936fff; }
+  color: #1a936fff;
+  word-break: break-word; }
 
 h3 {
   font-family: "Spartan", sans-serif;
-  color: #1a936fff; }
+  color: #1a936fff;
+  word-break: break-word; }
 
 h4 {
   font-family: "Spartan", sans-serif;
-  color: #1a936fff; }
+  color: #1a936fff;
+  word-break: break-word; }
 
 h5 {
   font-family: "Spartan", sans-serif;
-  color: #1a936fff; }
+  color: #1a936fff;
+  word-break: break-word; }
 
 h6 {
   font-family: "Spartan", sans-serif;
-  color: #1a936fff; }
+  color: #1a936fff;
+  word-break: break-word; }
 
 html,
 body {
   font-size: 18px;
   font-family: "Rubik", sans-serif;
   background-color: #f1e7db;
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+  height: 100%; }
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column; }
+
+.content {
+  flex: 1 0 auto; }
+
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  flex-shrink: 0; }
 
 a {
   color: inherit;
@@ -52,11 +72,12 @@ a {
   .links a:hover {
     color: #2d9cad; }
 
-.container {
-  max-width: 1000px;
+.content {
+  min-width: 1200px;
   margin: auto; }
   @media (max-width: 1200px) {
-    .container {
+    .content {
+      min-width: auto;
       margin: 5%;
       max-width: none; } }
 
