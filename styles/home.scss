@@ -21,11 +21,12 @@
     }
 }
 
-.container {
-    max-width: 1000px;
+.content {
+    min-width: 1200px;
     margin: auto;
 
     @media (max-width: 1200px) {
+        min-width: auto;
         margin: 5%;
         max-width: none;
     }

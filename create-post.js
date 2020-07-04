@@ -41,6 +41,7 @@ function createPost(postPath) {
     post.author = attribs.author;
     post.description = attribs.description;
     post.epochTime = attribs.date * 1000;
+    post.hidden = attribs.hidden;
     console.log(post.epochTime);
     post.dateString = dateFormat(new Date(post.epochTime), "mediumDate");
     post.path = postPath;

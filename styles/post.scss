@@ -22,6 +22,14 @@
 .title {
     color: $secondary;
     font-size: 2.5rem;
+    margin-right: 1rem;
+}
+
+.links {
+    display: flex;
+    a {
+        margin-right: 1rem;
+    }
 }
 
 .date {

@@ -1,5 +1,5 @@
 ---
-title: How I Built My Blog
+title: Programmatic Blogging
 author: Jinay Jain
 description: A reflection on how I created the static site generator behind this blog.
 date: 1588601471

@@ -3,9 +3,10 @@ title: Visualizing Backpropagation
 author: Jinay Jain
 description: An explainer on how machine learning libraries can optimize any function you give them.
 date: 1593575351
+hidden: true
 ---
 
-Before reading, you can try out my interactive visualization tool [**here**](https://jinay.dev/backprop-vis)
+Before reading, you can try out my [interactive visualization tool](https://jinay.dev/backprop-vis)
 
 At their core, neural networks are functions. They take some input, perform a
 series of computations, and produce an output. Though most networks operate
@@ -14,7 +15,11 @@ without the extra barrier of linear algebra. For this purposes of this
 explanation, we will only cover single variable functions, but the principles
 we will see can be extended into any number of dimensions.
 
-# Function Composition
+# The Forward Pass
+
+**add some sort of intro**
+
+## Function Composition
 
 We begin with the most basic function, mapping the entire range of inputs to a single number.
 
@@ -57,9 +62,9 @@ earlier are less like $f(x)+g(x)$ and more like
 
 $$ h(x) = f_5(f_4(f_3(f_2(f_1(x))))). $$
 
-Each $f_n$ is a layer in the network which produces an output using the previous layer as input.
+Each $f_n$ is a layer in the network which produces an output by using the previous layer as input.
 
-# Building a Computation Graph
+## Building a Computation Graph
 
 We can visualize a composed function's structure as a tree, each layer
 representing a different stage of the operation. In fact, most programming
@@ -73,6 +78,30 @@ For example, take the function $f(x)$ given below.
 
 $$ f(x) = \frac{1}{1+e^{-x}}$$
 
-In machine learning, this is an essential computation called the _sigmoid_
-function, often written as $\sigma(x)$. Let's see how we could break the
-sigmoid into a computation tree.
+In machine learning, this is a function called the _sigmoid_, often written
+as $\sigma(x)$. Let's see how we could break the sigmoid into a computation
+tree.
+
+**image here**
+
+Notice how all 5 leaf nodes are either a constant or a variable. These
+are the most elementary parts of any composite function. We can even give the
+intermediate functions letter names to highlight how each node is built from its children.
+
+**image here**
+
+**equations here**
+
+# Take It Back Now Y'all
+
+Now that we have observed how to compute the "forward pass" of a function, we
+can finally see how to compute the reverse using an algorithm called
+[backpropagation](https://en.wikipedia.org/wiki/Backpropagation).
+
+## Gradient Descent
+
+In machine learning, the end goal has always been to minimize error on a loss
+function, and modern software achieves this goal through an algorithm called
+_gradient descent_. Though I will not attempt to explain the entirety of
+gradient descent here, a basic understanding of how it works is essential for
+understanding backpropagation.
