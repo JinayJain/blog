@@ -8,7 +8,7 @@ date: 1588601471
 Blogs are almost never written in pure HTML. Behind every Medium, Wordpress,
 or Blogger post lies some system that converts a human-friendly document into
 something more computer friendly. Like a program compiler, they translate and
-link different files that represent your blog into a single site that your
+link different files from your blog into a single site, which your
 readers will see. To gain a deeper understanding of how exactly these systems
 operate, I decided to build my own system. How hard can it be? Before I dive
 into the technical explanation of my blog, I'd like to demonstrate some of

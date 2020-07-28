@@ -122,9 +122,9 @@ code {
 
 img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%; }
+  margin: 2rem auto;
+  width: 60%;
+  max-height: 600px; }
   @media (max-width: 768px) {
     img {
       width: 100%; } }
