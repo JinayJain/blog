@@ -4,6 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{!-- Social Media Meta Tags --}}
+    <meta property="og:title" content="{{ title }} - {{ author }}" />
+    <meta property="og:description" content="{{ description }}" />
+
+    {{!-- Twitter Meta Tags --}}
+    <meta name="twitter:title" content="{{ title }} - {{ author }}" />
+    <meta name="twitter:description" content="{{ description }}" />
+
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../../styles/post.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/an-old-hope.min.css">

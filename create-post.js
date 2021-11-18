@@ -42,7 +42,6 @@ function createPost(postPath) {
     post.description = attribs.description;
     post.epochTime = attribs.date * 1000;
     post.hidden = attribs.hidden;
-    console.log(post.epochTime);
     post.dateString = dateFormat(new Date(post.epochTime), "mediumDate");
     post.path = postPath;
     post.basename = path.basename(postPath, ".md");
