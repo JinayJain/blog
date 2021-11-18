@@ -1,99 +1,99 @@
 @import "global";
 
 .header {
-    margin-bottom: 3rem;
-    .author {
-        margin-top: 1rem;
-    }
+  margin-bottom: 3rem;
+  .author {
+    margin-top: 1rem;
+  }
 }
 
 .title-bar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
 
-    h1,
-    h3 {
-        margin-bottom: 0;
-    }
+  h1,
+  h3 {
+    margin-bottom: 0;
+  }
 }
 
 .title {
-    color: $secondary;
-    font-size: 2.5rem;
-    margin-right: 1rem;
+  color: $secondary;
+  font-size: 2.5rem;
+  margin-right: 1rem;
 
-    @media (max-width: 1200px) {
-        font-size: 2rem;
-    }
+  @media (max-width: 1200px) {
+    font-size: 2rem;
+  }
 }
 
 .links {
-    display: flex;
-    a {
-        margin-right: 1rem;
-    }
+  display: flex;
+  a {
+    margin-right: 1rem;
+  }
 }
 
 .date {
-    font-family: $monospaceFont;
-    font-size: smaller;
-    color: rgb(109, 150, 120);
+  font-family: $monospaceFont;
+  font-size: smaller;
+  color: rgb(109, 150, 120);
 }
 
 .content {
-    max-width: 1000px;
-    margin: auto;
+  max-width: 1000px;
+  margin: auto;
 
-    @media (max-width: 1200px) {
-        margin: 5%;
-        max-width: none;
-    }
+  @media (max-width: 1200px) {
+    margin: 5%;
+    max-width: none;
+  }
 
-    @for $i from 1 through 3 {
-        h#{$i} {
-            margin-top: 3rem;
-        }
+  @for $i from 1 through 3 {
+    h#{$i} {
+      margin-top: 3rem;
     }
+  }
 
-    p {
-        line-height: 150%;
-    }
+  p {
+    line-height: 150%;
+  }
 }
 
 code {
-    font-family: $monospaceFont;
-    font-variant-ligatures: none;
-    // background-color: rgba(200, 200, 200, 0.7);
-    padding: 0px 4px;
+  font-family: $monospaceFont;
+  font-variant-ligatures: none;
+  // background-color: rgba(200, 200, 200, 0.7);
+  padding: 0px 4px;
 }
 
 .hljs {
-    border-radius: 5px;
+  border-radius: 5px;
 
-    code {
-        background-color: unset;
-        padding: unset;
-    }
+  code {
+    background-color: unset;
+    padding: unset;
+  }
 }
 
 .katex-display {
-    overflow-x: auto;
-    overflow-y: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 img {
-    display: block;
-    margin: 2rem auto;
-    width: 60%;
-    max-height: 600px;
-    @media (max-width: 768px) {
-        width: 100%;
-    }
+  display: block;
+  margin: 2rem auto;
+  max-width: 60%;
+  max-height: 600px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 .caption {
-    text-align: center;
-    font-style: italic;
+  text-align: center;
+  font-style: italic;
 }

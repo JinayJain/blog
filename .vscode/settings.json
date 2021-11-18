@@ -1,3 +1,4 @@
 {
-    "liveServer.settings.root": "build/"
+  "liveServer.settings.root": "build/",
+  "cmake.configureOnOpen": false
 }

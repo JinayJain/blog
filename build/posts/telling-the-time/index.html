@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles/post.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/an-old-hope.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+    <title>Telling the Time with Computer Vision</title>
+</head>
+
+<body>
+    <div class="content">
+        <div class="header">
+
+            <div class="title-bar">
+                <h1 class="title">Telling the Time with Computer Vision</h1>
+                <div class="links">
+
+                    <h3><a href="https://jinay.dev/">home</a></h3>
+                    <h3><a href="/">blog</a></h3>
+                </div>
+            </div>
+            <h3 class="author">Jinay Jain<span class="date"> - Nov 18, 2021</span></h3>
+        </div>
+        <p>Few things are more embarrassing than having to spend 20 seconds trying to figure out how much time you have left on a standardized test. With no phone, smartwatch, or digital clock handy, you’re stuck trying to remember how to decipher the three lines on a circular wall clock. Unfortunately for many people (including me) who grew up surrounded by digital devices, the analog clock has not fully been phased out in the real world.</p>
+<p>Now, any normal person would revise their hour and minute hands to brush up on these skills, but you’re not going to be one of those people. You’re going to be a computer vision expert. You’re going to throw everything you know about vision algorithms at this simple task. And that’s exactly what I did.</p>
+<h1>Building the Timekeeper</h1>
+<p>For those who want to follow along, here’s the code I used to build what I have decided to call the <a href="https://github.com/JinayJain/timekeeper">Timekeeper</a>.</p>
+<h2>Where is that clock?</h2>
+<p>Before I could even start to code the time-telling aspect of the project, I had to first identify where the clock was in an image. Initially, I tried looking into circle detection algorithms like <a href="https://en.wikipedia.org/wiki/Circle_Hough_Transform">Hough Circles</a>, but that path introduced two problems:</p>
+<ol>
+<li>Clocks are not the only circular objects in the image.</li>
+<li>Due to perspective distortion, the clock’s shape is not always circular.</li>
+</ol>
+<p>Take a look at the image below. Since the photo was not taken directly facing the clock, its circular shape is distorted into an ellipse. Additionally, the embellishments around the clock could introduce many false-positive circles for a circle detection algorithm.</p>
+<p><img src="/images/clock1.png" alt="example of tricky clock"></p>
+<p class="caption">Photo by Nolwenn Coene from Pexels</p>
+<p>A hand-crafted solution to these issues would likely yield better results, but I decided to go with a more 2021 approach to the issue—deep learning. To my surprise, clocks are actually one of the target labels in the widely used <a href="https://cocodataset.org/">COCO dataset</a>, which is a large, open-source dataset of images of “Common Objects in Context” (COCO). Given the dataset’s ubiquity, I was able to easily find pretrained models that I could use to detect clocks in the image.</p>
+
+    </div>
+    <footer class="footer"><a href="https://jinay.dev">jinay.dev</a></footer>
+</body>
+
+</html>
