@@ -12,7 +12,7 @@
     "dependencies": {
         "dateformat": "^3.0.3",
         "front-matter": "^3.1.0",
-        "handlebars": "^4.7.6",
+        "handlebars": "^4.7.7",
         "highlight.js": "^10.4.1",
         "markdown-it": "^10.0.0",
         "markdown-it-attrs": "^3.0.2",
