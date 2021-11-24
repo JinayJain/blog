@@ -1,39 +1,51 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta property="og:title" content="Programmatic Blogging - Jinay Jain" />
-    <meta property="og:description" content="A reflection on how I created the static site generator behind this blog." />
+        <meta property="og:title" content="Programmatic Blogging - Jinay Jain" />
+        <meta property="og:description" content="A reflection on how I created the static site generator behind this blog." />
 
-    <meta name="twitter:title" content="Programmatic Blogging - Jinay Jain" />
-    <meta name="twitter:description" content="A reflection on how I created the static site generator behind this blog." />
-    <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Programmatic Blogging - Jinay Jain" />
+        <meta name="twitter:description" content="A reflection on how I created the static site generator behind this blog." />
+        <meta name="twitter:card" content="summary" />
 
-    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="../../styles/post.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/an-old-hope.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
-    <title>Programmatic Blogging</title>
-</head>
+        <link
+            rel="shortcut icon"
+            href="/images/favicon.png"
+            type="image/x-icon"
+        />
+        <link rel="stylesheet" href="../../styles/post.css" />
+        <link
+            rel="stylesheet"
+            href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/an-old-hope.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"
+        />
+        <title>Programmatic Blogging</title>
+    </head>
 
-<body>
-    <div class="content">
-        <div class="header">
-
-            <div class="title-bar">
-                <h1 class="title">Programmatic Blogging</h1>
-                <div class="links">
-
-                    <h3><a href="https://jinay.dev/">home</a></h3>
-                    <h3><a href="/">blog</a></h3>
+    <body>
+        <div class="content">
+            <div class="header">
+                <div class="title-bar">
+                    <div class="links">
+                        <h3><a href="https://jinay.dev/">home</a></h3>
+                        <h3><a href="/">blog</a></h3>
+                    </div>
+                    <div>
+                        <h1 class="title">Programmatic Blogging</h1>
+                        <p class="description">A reflection on how I created the static site generator behind this blog.</p>
+                    </div>
                 </div>
+                <h3 class="author">Jinay Jain<span class="date">
+                        -
+                        May 4, 2020</span></h3>
             </div>
-            <h3 class="author">Jinay Jain<span class="date"> - May 4, 2020</span></h3>
-        </div>
-        <p>Blogs are almost never written in pure HTML. Behind every Medium, Wordpress,
+            <p>Blogs are almost never written in pure HTML. Behind every Medium, Wordpress,
 or Blogger post lies some system that converts a human-friendly document into
 something more computer friendly. Like a program compiler, they translate and
 link different files from your blog into a single site, which your
@@ -41,7 +53,7 @@ readers will see. To gain a deeper understanding of how exactly these systems
 operate, I decided to build my own system. How hard can it be? Before I dive
 into the technical explanation of my blog, I’d like to demonstrate some of
 the things it can do.</p>
-<p>If you would like, you can jump straight to the <a href="#how-it-works">technical explanation</a></p>
+<p>If you would like, you can jump straight to the <a href="#how-it-works" target="_blank">technical explanation</a></p>
 <h2>Images</h2>
 <p><img src="/images/quokka.jpg" alt="quokka"></p>
 <p class="caption">A quokka</p>
@@ -89,13 +101,13 @@ is implemented, so I had to answer some questions before I started building.</p>
 to build the project, and GitHub pages to deploy (using the <code>gh-pages</code> NPM
 package). These initial choices outlined the general series of steps needed to assemble my blog generator.</p>
 <h2>Rendering Markdown Files</h2>
-<p><a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> (the syntax language for
+<p><a href="https://en.wikipedia.org/wiki/Markdown" target="_blank">Markdown</a> (the syntax language for
 GitHub README’s and many texting platforms), has a relatively simple syntax
 that enables a writer to define very basic text editing features: headers,
-bolding/italics, links, or code. This allows programmers to easily convert Markdown into other formats like LaTeX documents, Beamer presentations, and HTML pages. In fact, the <a href="https://pandoc.org/">pandoc</a> tool includes native support for converting markdown into a plethora of other file formats, allowing the user to control much of the styling and formatting of the document.</p>
+bolding/italics, links, or code. This allows programmers to easily convert Markdown into other formats like LaTeX documents, Beamer presentations, and HTML pages. In fact, the <a href="https://pandoc.org/" target="_blank">pandoc</a> tool includes native support for converting markdown into a plethora of other file formats, allowing the user to control much of the styling and formatting of the document.</p>
 <p>If I wanted to, I might have created a simple parser for Markdown myself.
 But—of course—there was a neat NPM package that did the work for me,
-<a href="https://github.com/markdown-it/markdown-it">markdown-it</a>. In my code, I
+<a href="https://github.com/markdown-it/markdown-it" target="_blank">markdown-it</a>. In my code, I
 simply read the desired Markdown file as a string and the simple
 <code>md.render(source)</code> would parse the document and convert it into HTML tags. <code>markdown-it</code> has several extensions that add extra syntax support for more specific needs. I added the <code>markdown-it-katex</code> package to include math equation rendering.</p>
 <p>While rendering, a line like</p>
@@ -182,10 +194,12 @@ system. Once I have developed the static site generator enough, I hope to
 distribute it as open source software for others to use. But for now, it
 shall remain a practical tool for maintaining my personal blog and nothing
 more.</p>
-<p>If you would like to download or inspect the code for this blog, you can find the GitHub repository <a href="https://github.com/jinayjain/blog">here</a>.</p>
+<p>If you would like to download or inspect the code for this blog, you can find the GitHub repository <a href="https://github.com/jinayjain/blog" target="_blank">here</a>.</p>
 
-    </div>
-    <footer class="footer"><a href="https://jinay.dev">jinay.dev</a></footer>
-</body>
+        </div>
+        <footer class="footer"><a
+                href="https://jinay.dev"
+            >jinay.dev</a></footer>
+    </body>
 
 </html>

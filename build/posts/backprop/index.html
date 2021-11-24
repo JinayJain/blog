@@ -1,39 +1,51 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta property="og:title" content="A Visual Tour of Backpropagation - Jinay Jain" />
-    <meta property="og:description" content="An explainer on how machine learning libraries can optimize any function." />
+        <meta property="og:title" content="A Visual Tour of Backpropagation - Jinay Jain" />
+        <meta property="og:description" content="An explainer on how machine learning libraries can optimize any function." />
 
-    <meta name="twitter:title" content="A Visual Tour of Backpropagation - Jinay Jain" />
-    <meta name="twitter:description" content="An explainer on how machine learning libraries can optimize any function." />
-    <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="A Visual Tour of Backpropagation - Jinay Jain" />
+        <meta name="twitter:description" content="An explainer on how machine learning libraries can optimize any function." />
+        <meta name="twitter:card" content="summary" />
 
-    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="../../styles/post.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/an-old-hope.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
-    <title>A Visual Tour of Backpropagation</title>
-</head>
+        <link
+            rel="shortcut icon"
+            href="/images/favicon.png"
+            type="image/x-icon"
+        />
+        <link rel="stylesheet" href="../../styles/post.css" />
+        <link
+            rel="stylesheet"
+            href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/an-old-hope.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"
+        />
+        <title>A Visual Tour of Backpropagation</title>
+    </head>
 
-<body>
-    <div class="content">
-        <div class="header">
-
-            <div class="title-bar">
-                <h1 class="title">A Visual Tour of Backpropagation</h1>
-                <div class="links">
-
-                    <h3><a href="https://jinay.dev/">home</a></h3>
-                    <h3><a href="/">blog</a></h3>
+    <body>
+        <div class="content">
+            <div class="header">
+                <div class="title-bar">
+                    <div class="links">
+                        <h3><a href="https://jinay.dev/">home</a></h3>
+                        <h3><a href="/">blog</a></h3>
+                    </div>
+                    <div>
+                        <h1 class="title">A Visual Tour of Backpropagation</h1>
+                        <p class="description">An explainer on how machine learning libraries can optimize any function.</p>
+                    </div>
                 </div>
+                <h3 class="author">Jinay Jain<span class="date">
+                        -
+                        Jul 27, 2020</span></h3>
             </div>
-            <h3 class="author">Jinay Jain<span class="date"> - Jul 27, 2020</span></h3>
-        </div>
-        <p>Before reading, you can try out my <a href="https://jinay.dev/backprop-vis">interactive visualization
+            <p>Before reading, you can try out my <a href="https://jinay.dev/backprop-vis" target="_blank">interactive visualization
 tool</a> for a primer on what I’ll discuss
 below.</p>
 <p>At their core, neural networks are functions. They take some input, perform a
@@ -95,7 +107,7 @@ earlier are less like <span class="katex"><span class="katex-mathml"><math><sema
 <h2>Building a Computation Graph</h2>
 <p>We can visualize a composed function’s structure as a tree, each layer
 representing a different stage of the operation. In fact, most programming
-languages use a <a href="https://en.wikipedia.org/wiki/Parse_tree">parse tree</a> to
+languages use a <a href="https://en.wikipedia.org/wiki/Parse_tree" target="_blank">parse tree</a> to
 store and evaluate expressions in code. This representation gives us the
 ability to view a function in terms of its component parts, recursing
 down the levels until we find the constants and variables at the
@@ -125,7 +137,7 @@ intermediate functions letter names to highlight how each node is built from its
 unnecessary abstractions on a relatively simple topic. However, now that we have
 observed how to compute the “forward pass” of a computation graph, we
 can compute the reverse using an algorithm called
-<a href="https://en.wikipedia.org/wiki/Backpropagation">backpropagation</a>.</p>
+<a href="https://en.wikipedia.org/wiki/Backpropagation" target="_blank">backpropagation</a>.</p>
 <h2>Gradient Descent</h2>
 <p>In machine learning, the end goal is to <strong>minimize error on a loss
 function</strong>, and modern software achieves this goal through an algorithm called
@@ -222,7 +234,7 @@ the addition rule. <span class="katex"><span class="katex-mathml"><math><semanti
 <p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>g</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>b</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>g</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>c</mi></mrow></mfrac><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>c</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>b</mi></mrow></mfrac><mo>=</mo><mn>1</mn><mn>0</mn><mo>×</mo><mn>4</mn><mo>=</mo><mn>4</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">\frac{\partial g}{\partial b} = \frac{\partial g}{\partial c}\frac{\partial c}{\partial b} = 10 \times 4 = 40
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.37144em;"></span><span class="strut bottom" style="height:2.05744em;vertical-align:-0.686em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathrm" style="margin-right:0.05556em;">∂</span><span class="mord mathit">b</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathrm" style="margin-right:0.05556em;">∂</span><span class="mord mathit" style="margin-right:0.03588em;">g</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mrel">=</span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathrm" style="margin-right:0.05556em;">∂</span><span class="mord mathit">c</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathrm" style="margin-right:0.05556em;">∂</span><span class="mord mathit" style="margin-right:0.03588em;">g</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathrm" style="margin-right:0.05556em;">∂</span><span class="mord mathit">b</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathrm" style="margin-right:0.05556em;">∂</span><span class="mord mathit">c</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mrel">=</span><span class="mord mathrm">1</span><span class="mord mathrm">0</span><span class="mbin">×</span><span class="mord mathrm">4</span><span class="mrel">=</span><span class="mord mathrm">4</span><span class="mord mathrm">0</span></span></span></span></span></p>
 <p>We’ve arrived at the end of the path to <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span></span></span></span>, giving us the final value of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>g</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>x</mi></mrow></mfrac><mo>=</mo><mn>4</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">\frac{\partial g}{\partial x} = 40</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.9322159999999999em;"></span><span class="strut bottom" style="height:1.277216em;vertical-align:-0.345em;"></span><span class="base textstyle uncramped"><span class="mord reset-textstyle textstyle uncramped"><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.345em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm" style="margin-right:0.05556em;">∂</span><span class="mord mathit">x</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.44610799999999995em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathrm" style="margin-right:0.05556em;">∂</span><span class="mord mathit" style="margin-right:0.03588em;">g</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mrel">=</span><span class="mord mathrm">4</span><span class="mord mathrm">0</span></span></span></span>.</p>
-<p>I encourage you to revisit my <a href="https://jinay.dev/backprop-vis/">visualization
+<p>I encourage you to revisit my <a href="https://jinay.dev/backprop-vis/" target="_blank">visualization
 tool</a> and play around with various
 functions, tracing the path of the gradients down to your original variables.
 You might even want to try <code>(4*x+1)^2</code> and see how the gradients change as
@@ -236,12 +248,14 @@ computers on any amount of data.</p>
 <p>The task remains constant—minimize error on a loss function.</p>
 <h3>Additional Resources</h3>
 <p><em>This post was inspired by the insightful explanations of backpropagation linked below.</em></p>
-<p><a href="https://cs231n.github.io/optimization-2/">Stanford CS231n - Backpropagation, Intuitions</a></p>
-<p><a href="https://www.youtube.com/watch?v=Ilg3gGewQ5U">3Blue1Brown - What is backpropagation really doing?</a></p>
-<p><a href="https://www.youtube.com/watch?v=GlcnxUlrtek">Welch Labs - Neural Networks Demystified - Backpropagation</a></p>
+<p><a href="https://cs231n.github.io/optimization-2/" target="_blank">Stanford CS231n - Backpropagation, Intuitions</a></p>
+<p><a href="https://www.youtube.com/watch?v=Ilg3gGewQ5U" target="_blank">3Blue1Brown - What is backpropagation really doing?</a></p>
+<p><a href="https://www.youtube.com/watch?v=GlcnxUlrtek" target="_blank">Welch Labs - Neural Networks Demystified - Backpropagation</a></p>
 
-    </div>
-    <footer class="footer"><a href="https://jinay.dev">jinay.dev</a></footer>
-</body>
+        </div>
+        <footer class="footer"><a
+                href="https://jinay.dev"
+            >jinay.dev</a></footer>
+    </body>
 
 </html>

@@ -1,43 +1,57 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    {{!-- Social Media Meta Tags --}}
-    <meta property="og:title" content="{{ title }} - {{ author }}" />
-    <meta property="og:description" content="{{ description }}" />
+        {{! Social Media Meta Tags }}
+        <meta property="og:title" content="{{title}} - {{author}}" />
+        <meta property="og:description" content="{{description}}" />
 
-    {{!-- Twitter Meta Tags --}}
-    <meta name="twitter:title" content="{{ title }} - {{ author }}" />
-    <meta name="twitter:description" content="{{ description }}" />
-    <meta name="twitter:card" content="summary" />
+        {{! Twitter Meta Tags }}
+        <meta name="twitter:title" content="{{title}} - {{author}}" />
+        <meta name="twitter:description" content="{{description}}" />
+        <meta name="twitter:card" content="summary" />
 
-    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="../../styles/post.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/an-old-hope.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
-    <title>{{ title }}</title>
-</head>
+        <link
+            rel="shortcut icon"
+            href="/images/favicon.png"
+            type="image/x-icon"
+        />
+        <link rel="stylesheet" href="../../styles/post.css" />
+        <link
+            rel="stylesheet"
+            href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/an-old-hope.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"
+        />
+        <title>{{title}}</title>
+    </head>
 
-<body>
-    <div class="content">
-        <div class="header">
-
-            <div class="title-bar">
-                <h1 class="title">{{ title }}</h1>
-                <div class="links">
-
-                    <h3><a href="https://jinay.dev/">home</a></h3>
-                    <h3><a href="/">blog</a></h3>
+    <body>
+        <div class="content">
+            <div class="header">
+                <div class="title-bar">
+                    <div class="links">
+                        <h3><a href="https://jinay.dev/">home</a></h3>
+                        <h3><a href="/">blog</a></h3>
+                    </div>
+                    <div>
+                        <h1 class="title">{{title}}</h1>
+                        <p class="description">{{description}}</p>
+                    </div>
                 </div>
+                <h3 class="author">{{author}}<span class="date">
+                        -
+                        {{dateString}}</span></h3>
             </div>
-            <h3 class="author">{{ author }}<span class="date"> - {{ dateString }}</span></h3>
+            {{{content}}}
         </div>
-        {{{ content }}}
-    </div>
-    <footer class="footer"><a href="https://jinay.dev">jinay.dev</a></footer>
-</body>
+        <footer class="footer"><a
+                href="https://jinay.dev"
+            >jinay.dev</a></footer>
+    </body>
 
 </html>

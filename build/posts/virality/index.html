@@ -1,0 +1,73 @@
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta property="og:title" content="How My Toy Project Turned Into a Viral Challenge - Jinay Jain" />
+        <meta property="og:description" content="Scaling a toy project about time perception from 0 to 80k requests in a day." />
+
+        <meta name="twitter:title" content="How My Toy Project Turned Into a Viral Challenge - Jinay Jain" />
+        <meta name="twitter:description" content="Scaling a toy project about time perception from 0 to 80k requests in a day." />
+        <meta name="twitter:card" content="summary" />
+
+        <link
+            rel="shortcut icon"
+            href="/images/favicon.png"
+            type="image/x-icon"
+        />
+        <link rel="stylesheet" href="../../styles/post.css" />
+        <link
+            rel="stylesheet"
+            href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/an-old-hope.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"
+        />
+        <title>How My Toy Project Turned Into a Viral Challenge</title>
+    </head>
+
+    <body>
+        <div class="content">
+            <div class="header">
+                <div class="title-bar">
+                    <div class="links">
+                        <h3><a href="https://jinay.dev/">home</a></h3>
+                        <h3><a href="/">blog</a></h3>
+                    </div>
+                    <div>
+                        <h1 class="title">How My Toy Project Turned Into a Viral Challenge</h1>
+                        <p class="description">Scaling a toy project about time perception from 0 to 80k requests in a day.</p>
+                    </div>
+                </div>
+                <h3 class="author">Jinay Jain<span class="date">
+                        -
+                        Nov 23, 2021</span></h3>
+            </div>
+            <p>If you’re curious to see how well you can estimate a minute, try out <a href="https://jinay.dev/just-a-minute/" target="_blank">Just a Minute</a> for yourself.</p>
+<p>Late last year, I was brainstorming ideas with my team for a hackathon project that could be made in less than 24 hours. One such idea I had was to build a web experiment that tests how people perceive time. In hindsight, the idea was so simple that it would be overkill to use a team of 4 people to build it in 24 hours. We ended up pursuing a different, more technically complex project, but I still kept my original idea in mind.</p>
+<p>A few weeks later, I had some spare time and wanted to build a quick weekend project, so I went back to that hackathon idea and built a simple page that asked users to estimate how long a minute is. I deployed it to GitHub Pages and shared it with a few close friends to try out. All in all, the implementation took less than a day to complete.</p>
+<p>And that was it—I left the website up and moved on to my next project.</p>
+<h1>The Revival</h1>
+<p>After a year of no updates, I decided to revisit the site and add another feature: a live histogram of estimates as they came in. To avoid the hassle of setting up my own backend server, I used the <a href="https://firebase.google.com/docs/database" target="_blank">Firebase Realtime Database</a> as a quick solution to store the data. This would allow me to do simple reads and writes to the database without having to write a custom server API. The per-GB pricing for Firebase was comparatively expensive to other options—but I was never going to exceed the free tier limits, right?</p>
+<p>Every time someone completed an attempt, I would write a new entry with their time to the database. The database would return <strong>all times</strong> back to the client, which I then used to build a histogram with the <a href="https://www.chartjs.org/" target="_blank">Chart.js</a> library. Computing the histogram values was all done on the client, so the database’s only responsibility was to store the data and return it to the client.</p>
+<h2>False Starts</h2>
+<p>With this new feature implemented, I had to find people to populate the histogram with their own attempts. I enlisted the help of other computer science majors at my university, who provided a good initial dataset. I also received some help from a more experienced Firebase user, who helped me establish a ruleset that was more strict than the very dangerous default:</p>
+<pre class="hljs"><code>{
+  &quot;rules&quot;: {
+    &quot;.read&quot;: true,
+    &quot;.write&quot;: true
+  }
+}
+</code></pre>
+<p>All in all, this beta test with fellow students was a successful test of the new feature. People seemed to enjoy it and I was able to get a good idea of how the data would look. Then, I turned to Hacker News to reach a larger audience (and hopefully reach the front page). I <a href="https://news.ycombinator.com/item?id=29288785" target="_blank">posted</a> the project as a Show HN, but it didn’t achieve the success I had hoped for. What I did learn, however, was the importance of supporting mobile devices, since 3 of the 5 comments complained about the lack of mobile support. Up until now, I was satisfied with the 100 or so data points I was able to collect.</p>
+<h1>r/InternetIsBeautiful</h1>
+
+        </div>
+        <footer class="footer"><a
+                href="https://jinay.dev"
+            >jinay.dev</a></footer>
+    </body>
+
+</html>
