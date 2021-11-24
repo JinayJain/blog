@@ -1,51 +1,40 @@
+<!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <meta property="og:title" content="Telling the Time with Computer Vision - Jinay Jain" />
-        <meta property="og:description" content="Overengineering an approach to reading an analog clock" />
+    <meta property="og:title" content="Telling the Time with Computer Vision - Jinay Jain" />
+    <meta property="og:description" content="Overengineering an approach to reading an analog clock" />
 
-        <meta name="twitter:title" content="Telling the Time with Computer Vision - Jinay Jain" />
-        <meta name="twitter:description" content="Overengineering an approach to reading an analog clock" />
-        <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Telling the Time with Computer Vision - Jinay Jain" />
+    <meta name="twitter:description" content="Overengineering an approach to reading an analog clock" />
+    <meta name="twitter:card" content="summary" />
 
-        <link
-            rel="shortcut icon"
-            href="/images/favicon.png"
-            type="image/x-icon"
-        />
-        <link rel="stylesheet" href="../../styles/post.css" />
-        <link
-            rel="stylesheet"
-            href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/an-old-hope.min.css"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"
-        />
-        <title>Telling the Time with Computer Vision</title>
-    </head>
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles/post.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/an-old-hope.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+    <title>Telling the Time with Computer Vision</title>
+</head>
 
-    <body>
-        <div class="content">
-            <div class="header">
-                <div class="title-bar">
-                    <div class="links">
-                        <h3><a href="https://jinay.dev/">home</a></h3>
-                        <h3><a href="/">blog</a></h3>
-                    </div>
-                    <div>
-                        <h1 class="title">Telling the Time with Computer Vision</h1>
-                        <p class="description">Overengineering an approach to reading an analog clock</p>
-                    </div>
+<body>
+    <div class="content">
+        <div class="header">
+
+            <div class="title-bar">
+                <div class="links">
+
+                    <h3><a href="https://jinay.dev/">home</a></h3>
+                    <h3><a href="/">blog</a></h3>
                 </div>
-                <h3 class="author">Jinay Jain<span class="date">
-                        -
-                        Nov 18, 2021</span></h3>
+                <h1 class="title">Telling the Time with Computer Vision</h1>
             </div>
-            <p>Few things are more embarrassing than having to spend 20 seconds trying to figure out how much time you have left on a standardized test. With no phone, smartwatch, or digital clock handy, you’re stuck trying to remember how to decipher the three lines on a circular wall clock. Unfortunately for many people (including me) who grew up surrounded by digital devices, the analog clock has not fully been phased out in the real world.</p>
+            <p class="description">Overengineering an approach to reading an analog clock</p>
+            <h3 class="author">Jinay Jain<span class="date"> - Nov 18, 2021</span></h3>
+        </div>
+        <p>Few things are more embarrassing than having to spend 20 seconds trying to figure out how much time you have left on a standardized test. With no phone, smartwatch, or digital clock handy, you’re stuck trying to remember how to decipher the three lines on a circular wall clock. Unfortunately for many people (including me) who grew up surrounded by digital devices, the analog clock has not fully been phased out in the real world.</p>
 <p>Now, any normal person would revise their hour and minute hands to brush up on these skills, but you’re not going to be one of those people. You’re going to be a computer vision expert. You’re going to throw everything you know about vision algorithms at this simple task. And that’s exactly what I did.</p>
 <h1>Building the Timekeeper</h1>
 <p>For those who want to follow along, here’s the code I used to build what I have decided to call the <a href="https://github.com/JinayJain/timekeeper" target="_blank">Timekeeper</a>.</p>
@@ -89,10 +78,8 @@
 <h2>Perspective Correction</h2>
 <p>After detecting the bounding boxes, I could reliably locate a box for where the clock was located (even with other circles in the image). However, the clock’s shape was often distorted due to perspective changes. The later steps in the project rely on estimating the hand angles, so it was important for the clock to be a circle.</p>
 
-        </div>
-        <footer class="footer"><a
-                href="https://jinay.dev"
-            >jinay.dev</a></footer>
-    </body>
+    </div>
+    <footer class="footer"><a href="https://jinay.dev">jinay.dev</a></footer>
+</body>
 
 </html>
