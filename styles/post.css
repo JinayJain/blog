@@ -62,14 +62,12 @@ a {
   .header .author {
     margin-top: 1rem; }
 
-.title-bar {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline; }
-  .title-bar h1,
-  .title-bar h3 {
-    margin-bottom: 0; }
+.title-bar h1,
+.title-bar h3 {
+  margin-bottom: 0; }
+
+.title-bar .description {
+  font-style: italic; }
 
 .title {
   color: #114b5fff;
@@ -131,4 +129,7 @@ img {
 
 .caption {
   text-align: center;
+  font-style: italic; }
+
+blockquote {
   font-style: italic; }
