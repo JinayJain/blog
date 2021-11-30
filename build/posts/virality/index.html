@@ -32,7 +32,7 @@
                 <h1 class="title">How My Toy Project Turned Into a Viral Challenge</h1>
             </div>
             <p class="description">Scaling a toy project about time perception from 0 to 80k requests in a day.</p>
-            <h3 class="author">Jinay Jain<span class="date"> - Nov 23, 2021</span></h3>
+            <h3 class="author">Jinay Jain<span class="date"> - Nov 29, 2021</span></h3>
         </div>
         <p>If you’re curious to see how well you can estimate a minute, try out <a href="https://jinay.dev/just-a-minute/" target="_blank">Just a Minute</a> for yourself (and the <a href="https://github.com/JinayJain/just-a-minute" target="_blank">source code</a>).</p>
 <p>Late last year, I was brainstorming ideas with my team for a hackathon project that could be made in less than 24 hours. One such idea I had was to build a web experiment that tests how people perceive time. In hindsight, the idea was so simple that it would be overkill to use a team of 4 people to build it in 24 hours. We ended up pursuing a different, more technically complex project, but I still kept my original idea in mind.</p>
@@ -65,6 +65,15 @@
 <p class="caption">A graph of the project’s Firebase download usage over time</p>
 <p>Left unaddressed, the graph above would have looked more like an exponential graph than a spike and dip. By 5:37 PM, I pushed a quick fix to the issue by freezing the data being sent to the client, thereby halting the rapid growth in data consumption.</p>
 <p><em>6:58 PM</em> - I began to search for more ways I could foster virality and encourage more people to limit-test my project. The most obvious option was to add a few basic social media sharing buttons that allowed people to challenge their friends to a time-estimation duel.</p>
+<p><img src="/images/social-sharing.png" alt="Image of Social Sharing Buttons"></p>
+<p class="caption">Social media buttons added to encourage sharing</p>
+<p><em>10:40 PM</em> - My last addition before heading to bed was a futile attempt at preventing spam: ReCAPTCHA integration. Firebase has built-in support for adding a captcha to your site through <a href="https://firebase.google.com/docs/app-check" target="_blank">App Check</a>, so it was a simple process of adding in the necessary scripts to get request validation working. It wasn’t the best way to prevent spam, but it was a good start. And so after one last refresh of the histogram data, I went to sleep.</p>
+<p><strong>Nov. 23, The Next Day</strong></p>
+<p><em>8:00 AM</em> - <em>Inhale</em>, I checked Firebase to see if the data was still there. <em>Exhale</em>—it was, and the database had almost 50,000 entries. I checked Twitter to see if anyone had used the sharing button, and to my surprise, there were many. In fact, the project had garnered some attention from a popular user in the <a href="https://twitter.com/BlueJakk/status/1463084812068085760" target="_blank">Middle East</a>, with over 500 likes.</p>
+<p>The rest of the day was a combination of responding to the latest comments on Reddit and checking to make sure the database wouldn’t surprise me with an exorbitant Firebase bill. Thankfully, most of the chaos was over and I enjoyed the rest of the day seeing people’s natural reaction to the project.</p>
+<h2>Reflection</h2>
+<p>Compared to my other projects, this one was a technical cakewalk. The real challenge came from learning how to scale it from a small tens of users to thousands, which introduced many problems I had never faced before. There was a constant struggle between keeping the site afloat and making sure I didn’t have to pay a lot in server costs. Nevertheless, the hundreds of positive comments and thousands of attempts are an addictive high that I hope to achieve again, whenever that may be.</p>
+<p>If you’re still curious about how well you can estimate a minute yourself, check out <a href="https://jinay.dev/just-a-minute/" target="_blank">Just a Minute</a> and see how you do.</p>
 
     </div>
     <footer class="footer"><a href="https://jinay.dev">jinay.dev</a></footer>

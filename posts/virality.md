@@ -2,8 +2,7 @@
 title: How My Toy Project Turned Into a Viral Challenge
 description: Scaling a toy project about time perception from 0 to 80k requests in a day.
 author: Jinay Jain
-date: 1637703320
-hidden: true
+date: 1638231442
 ---
 
 If you're curious to see how well you can estimate a minute, try out [Just a Minute](https://jinay.dev/just-a-minute/) for yourself (and the [source code](https://github.com/JinayJain/just-a-minute)).
@@ -58,3 +57,21 @@ A graph of the project's Firebase download usage over time {.caption}
 Left unaddressed, the graph above would have looked more like an exponential graph than a spike and dip. By 5:37 PM, I pushed a quick fix to the issue by freezing the data being sent to the client, thereby halting the rapid growth in data consumption.
 
 _6:58 PM_ - I began to search for more ways I could foster virality and encourage more people to limit-test my project. The most obvious option was to add a few basic social media sharing buttons that allowed people to challenge their friends to a time-estimation duel.
+
+![Image of Social Sharing Buttons](/images/social-sharing.png)
+
+Social media buttons added to encourage sharing{.caption}
+
+_10:40 PM_ - My last addition before heading to bed was a futile attempt at preventing spam: ReCAPTCHA integration. Firebase has built-in support for adding a captcha to your site through [App Check](https://firebase.google.com/docs/app-check), so it was a simple process of adding in the necessary scripts to get request validation working. It wasn't the best way to prevent spam, but it was a good start. And so after one last refresh of the histogram data, I went to sleep.
+
+**Nov. 23, The Next Day**
+
+_8:00 AM_ - _Inhale_, I checked Firebase to see if the data was still there. _Exhale_---it was, and the database had almost 50,000 entries. I checked Twitter to see if anyone had used the sharing button, and to my surprise, there were many. In fact, the project had garnered some attention from a popular user in the [Middle East](https://twitter.com/BlueJakk/status/1463084812068085760), with over 500 likes.
+
+The rest of the day was a combination of responding to the latest comments on Reddit and checking to make sure the database wouldn't surprise me with an exorbitant Firebase bill. Thankfully, most of the chaos was over and I enjoyed the rest of the day seeing people's natural reaction to the project.
+
+## Reflection
+
+Compared to my other projects, this one was a technical cakewalk. The real challenge came from learning how to scale it from a small tens of users to thousands, which introduced many problems I had never faced before. There was a constant struggle between keeping the site afloat and making sure I didn't have to pay a lot in server costs. Nevertheless, the hundreds of positive comments and thousands of attempts are an addictive high that I hope to achieve again, whenever that may be.
+
+If you're still curious about how well you can estimate a minute yourself, check out [Just a Minute](https://jinay.dev/just-a-minute/) and see how you do.
