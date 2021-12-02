@@ -57,6 +57,47 @@ a {
   a:hover {
     color: #114b5fff; }
 
+.newsletter {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: #1a936fff;
+  color: #f3e9d2ff; }
+  .newsletter h1 {
+    margin-top: 0;
+    color: #f3e9d2ff; }
+  .newsletter h2 {
+    margin-top: 0;
+    color: #f3e9d2ff; }
+  .newsletter h3 {
+    margin-top: 0;
+    color: #f3e9d2ff; }
+  .newsletter h4 {
+    margin-top: 0;
+    color: #f3e9d2ff; }
+  .newsletter h5 {
+    margin-top: 0;
+    color: #f3e9d2ff; }
+  .newsletter h6 {
+    margin-top: 0;
+    color: #f3e9d2ff; }
+  .newsletter form input[type="submit"] {
+    font-family: "Rubik", sans-serif;
+    background-color: #114b5fff;
+    color: #f3e9d2ff;
+    border: none;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer; }
+    .newsletter form input[type="submit"]:hover {
+      background-color: #1c7e8d; }
+  .newsletter form #tlemail {
+    font-family: "Rubik", sans-serif;
+    font-size: 0.8rem;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem; }
+
 .header {
   margin-bottom: 3rem; }
   .header .author {
@@ -87,21 +128,25 @@ a {
   font-size: smaller;
   color: #6d9678; }
 
-.content {
+.container {
   max-width: 1000px;
   margin: auto; }
   @media (max-width: 1200px) {
-    .content {
+    .container {
       margin: 5%;
       max-width: none; } }
-  .content h1 {
-    margin-top: 3rem; }
-  .content h2 {
-    margin-top: 3rem; }
-  .content h3 {
-    margin-top: 3rem; }
-  .content p {
-    line-height: 150%; }
+
+.content h1 {
+  margin-top: 3rem; }
+
+.content h2 {
+  margin-top: 3rem; }
+
+.content h3 {
+  margin-top: 3rem; }
+
+.content p {
+  line-height: 150%; }
 
 code {
   font-family: "Space Mono", monospace;

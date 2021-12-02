@@ -20,21 +20,22 @@
 </head>
 
 <body>
-    <div class="content">
-        <div class="header">
+    <div class="container">
+        <div class="content">
+            <div class="header">
 
-            <div class="title-bar">
-                <div class="links">
+                <div class="title-bar">
+                    <div class="links">
 
-                    <h3><a href="https://jinay.dev/">home</a></h3>
-                    <h3><a href="/">blog</a></h3>
+                        <h3><a href="https://jinay.dev/">home</a></h3>
+                        <h3><a href="/">blog</a></h3>
+                    </div>
+                    <h1 class="title">How My Toy Project Turned Into a Viral Challenge</h1>
                 </div>
-                <h1 class="title">How My Toy Project Turned Into a Viral Challenge</h1>
+                <p class="description">Scaling a toy project about time perception from 0 to 80k requests in a day.</p>
+                <h3 class="author">Jinay Jain<span class="date"> - Nov 29, 2021</span></h3>
             </div>
-            <p class="description">Scaling a toy project about time perception from 0 to 80k requests in a day.</p>
-            <h3 class="author">Jinay Jain<span class="date"> - Nov 29, 2021</span></h3>
-        </div>
-        <p>If you’re curious to see how well you can estimate a minute, try out <a href="https://jinay.dev/just-a-minute/" target="_blank">Just a Minute</a> for yourself (and the <a href="https://github.com/JinayJain/just-a-minute" target="_blank">source code</a>).</p>
+            <p>If you’re curious to see how well you can estimate a minute, try out <a href="https://jinay.dev/just-a-minute/" target="_blank">Just a Minute</a> for yourself (and the <a href="https://github.com/JinayJain/just-a-minute" target="_blank">source code</a>).</p>
 <p>Late last year, I was brainstorming ideas with my team for a hackathon project that could be made in less than 24 hours. One such idea I had was to build a web experiment that tests how people perceive time. In hindsight, the idea was so simple that it would be overkill to use a team of 4 people to build it in 24 hours. We ended up pursuing a different, more technically complex project, but I still kept my original idea in mind.</p>
 <p>A few weeks later, I had some spare time and wanted to build a quick weekend project, so I went back to that hackathon idea and built a simple page that asked users to estimate how long a minute is. I deployed it to GitHub Pages and shared it with a few close friends to try out. All in all, the implementation took less than a day to complete.</p>
 <p>And that was it—I left the website up and moved on to my next project.</p>
@@ -75,11 +76,22 @@
 <p>Compared to my other projects, this one was a technical cakewalk. The real challenge came from learning how to scale it from a small tens of users to thousands, which introduced many problems I had never faced before. There was a constant struggle between keeping the site afloat and making sure I didn’t have to pay a lot in server costs. Nevertheless, the hundreds of positive comments and thousands of attempts are an addictive high that I hope to achieve again, whenever that may be.</p>
 <p>If you’re still curious about how well you can estimate a minute yourself, check out <a href="https://jinay.dev/just-a-minute/" target="_blank">Just a Minute</a> and see how you do.</p>
 
+        </div>
+        <div class="newsletter">
+            <h3>Want to stay updated?</h3>
+            <p> Hear about my latest adventures in AI, software, and programming</p>
+            <form action="https://tinyletter.com/jinay" method="post" target="popupwindow"
+                onsubmit="window.open('https://tinyletter.com/jinay', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+                <p><input type="text" name="email" id="tlemail" placeholder="example@email.com"/></p><input type="hidden" value="1"
+                    name="embed" /><input type="submit" value="Subscribe" />
+            </form>
+        </div>
+
     </div>
     <footer class="footer">
         <hr />
         <p>Jinay Jain</p>
-        
+
         <a href="https://jinay.dev">website</a>
         <a href="mailto:hi@jinay.dev">email</a>
         <a href="https://github.com/JinayJain/">github</a>

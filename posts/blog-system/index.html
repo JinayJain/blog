@@ -20,21 +20,22 @@
 </head>
 
 <body>
-    <div class="content">
-        <div class="header">
+    <div class="container">
+        <div class="content">
+            <div class="header">
 
-            <div class="title-bar">
-                <div class="links">
+                <div class="title-bar">
+                    <div class="links">
 
-                    <h3><a href="https://jinay.dev/">home</a></h3>
-                    <h3><a href="/">blog</a></h3>
+                        <h3><a href="https://jinay.dev/">home</a></h3>
+                        <h3><a href="/">blog</a></h3>
+                    </div>
+                    <h1 class="title">Programmatic Blogging</h1>
                 </div>
-                <h1 class="title">Programmatic Blogging</h1>
+                <p class="description">A reflection on how I created the static site generator behind this blog.</p>
+                <h3 class="author">Jinay Jain<span class="date"> - May 4, 2020</span></h3>
             </div>
-            <p class="description">A reflection on how I created the static site generator behind this blog.</p>
-            <h3 class="author">Jinay Jain<span class="date"> - May 4, 2020</span></h3>
-        </div>
-        <p>Blogs are almost never written in pure HTML. Behind every Medium, Wordpress,
+            <p>Blogs are almost never written in pure HTML. Behind every Medium, Wordpress,
 or Blogger post lies some system that converts a human-friendly document into
 something more computer friendly. Like a program compiler, they translate and
 link different files from your blog into a single site, which your
@@ -185,11 +186,22 @@ shall remain a practical tool for maintaining my personal blog and nothing
 more.</p>
 <p>If you would like to download or inspect the code for this blog, you can find the GitHub repository <a href="https://github.com/jinayjain/blog" target="_blank">here</a>.</p>
 
+        </div>
+        <div class="newsletter">
+            <h3>Want to stay updated?</h3>
+            <p> Hear about my latest adventures in AI, software, and programming</p>
+            <form action="https://tinyletter.com/jinay" method="post" target="popupwindow"
+                onsubmit="window.open('https://tinyletter.com/jinay', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+                <p><input type="text" name="email" id="tlemail" placeholder="example@email.com"/></p><input type="hidden" value="1"
+                    name="embed" /><input type="submit" value="Subscribe" />
+            </form>
+        </div>
+
     </div>
     <footer class="footer">
         <hr />
         <p>Jinay Jain</p>
-        
+
         <a href="https://jinay.dev">website</a>
         <a href="mailto:hi@jinay.dev">email</a>
         <a href="https://github.com/JinayJain/">github</a>

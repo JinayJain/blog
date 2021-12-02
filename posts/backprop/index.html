@@ -20,21 +20,22 @@
 </head>
 
 <body>
-    <div class="content">
-        <div class="header">
+    <div class="container">
+        <div class="content">
+            <div class="header">
 
-            <div class="title-bar">
-                <div class="links">
+                <div class="title-bar">
+                    <div class="links">
 
-                    <h3><a href="https://jinay.dev/">home</a></h3>
-                    <h3><a href="/">blog</a></h3>
+                        <h3><a href="https://jinay.dev/">home</a></h3>
+                        <h3><a href="/">blog</a></h3>
+                    </div>
+                    <h1 class="title">A Visual Tour of Backpropagation</h1>
                 </div>
-                <h1 class="title">A Visual Tour of Backpropagation</h1>
+                <p class="description">An explainer on how machine learning libraries can optimize any function.</p>
+                <h3 class="author">Jinay Jain<span class="date"> - Jul 27, 2020</span></h3>
             </div>
-            <p class="description">An explainer on how machine learning libraries can optimize any function.</p>
-            <h3 class="author">Jinay Jain<span class="date"> - Jul 27, 2020</span></h3>
-        </div>
-        <p>Before reading, you can try out my <a href="https://jinay.dev/backprop-vis" target="_blank">interactive visualization
+            <p>Before reading, you can try out my <a href="https://jinay.dev/backprop-vis" target="_blank">interactive visualization
 tool</a> for a primer on what I’ll discuss
 below.</p>
 <p>At their core, neural networks are functions. They take some input, perform a
@@ -241,11 +242,22 @@ computers on any amount of data.</p>
 <p><a href="https://www.youtube.com/watch?v=Ilg3gGewQ5U" target="_blank">3Blue1Brown - What is backpropagation really doing?</a></p>
 <p><a href="https://www.youtube.com/watch?v=GlcnxUlrtek" target="_blank">Welch Labs - Neural Networks Demystified - Backpropagation</a></p>
 
+        </div>
+        <div class="newsletter">
+            <h3>Want to stay updated?</h3>
+            <p> Hear about my latest adventures in AI, software, and programming</p>
+            <form action="https://tinyletter.com/jinay" method="post" target="popupwindow"
+                onsubmit="window.open('https://tinyletter.com/jinay', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+                <p><input type="text" name="email" id="tlemail" placeholder="example@email.com"/></p><input type="hidden" value="1"
+                    name="embed" /><input type="submit" value="Subscribe" />
+            </form>
+        </div>
+
     </div>
     <footer class="footer">
         <hr />
         <p>Jinay Jain</p>
-        
+
         <a href="https://jinay.dev">website</a>
         <a href="mailto:hi@jinay.dev">email</a>
         <a href="https://github.com/JinayJain/">github</a>
