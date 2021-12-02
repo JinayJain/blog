@@ -6,7 +6,7 @@ $monospaceFont: "Space Mono", monospace;
 $textFont: "Rubik", sans-serif;
 
 $secondary: #114b5fff;
-$secondaryLight: rgb(45, 156, 173);
+$secondaryLight: rgb(28, 126, 141);
 $primaryDark: #1a936fff;
 $primary: #88d498ff;
 $primaryLight: #c6dabfff;
@@ -51,5 +51,44 @@ a {
     text-decoration: underline;
     &:hover {
         color: $secondary;
+    }
+}
+
+.newsletter {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-color: $primaryDark;
+    color: $light;
+
+    @for $i from 1 through 6 {
+        h#{$i} {
+            margin-top: 0;
+            color: $light;
+        }
+    }
+
+    form {
+        input[type="submit"] {
+            font-family: $textFont;
+            background-color: $secondary;
+            color: $light;
+            border: none;
+            font-size: 1rem;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $secondaryLight;
+            }
+        }
+
+        #tlemail {
+            font-family: $textFont;
+            font-size: 0.8rem;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+        }
     }
 }

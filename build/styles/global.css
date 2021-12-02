@@ -56,3 +56,44 @@ a {
   text-decoration: underline; }
   a:hover {
     color: #114b5fff; }
+
+.newsletter {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: #1a936fff;
+  color: #f3e9d2ff; }
+  .newsletter h1 {
+    margin-top: 0;
+    color: #f3e9d2ff; }
+  .newsletter h2 {
+    margin-top: 0;
+    color: #f3e9d2ff; }
+  .newsletter h3 {
+    margin-top: 0;
+    color: #f3e9d2ff; }
+  .newsletter h4 {
+    margin-top: 0;
+    color: #f3e9d2ff; }
+  .newsletter h5 {
+    margin-top: 0;
+    color: #f3e9d2ff; }
+  .newsletter h6 {
+    margin-top: 0;
+    color: #f3e9d2ff; }
+  .newsletter form input[type="submit"] {
+    font-family: "Rubik", sans-serif;
+    background-color: #114b5fff;
+    color: #f3e9d2ff;
+    border: none;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer; }
+    .newsletter form input[type="submit"]:hover {
+      background-color: #1c7e8d; }
+  .newsletter form #tlemail {
+    font-family: "Rubik", sans-serif;
+    font-size: 0.8rem;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem; }
