@@ -3,7 +3,6 @@ title: Telling the Time with Computer Vision
 author: Jinay Jain
 description: Overengineering an approach to reading an analog clock
 date: 1639803345
-hidden: true
 ---
 
 Few things are more embarrassing than having to spend 20 seconds trying to figure out how much time you have left on a standardized test. With no phone, smartwatch, or digital clock handy, you're stuck trying to remember how to decipher the three lines on a circular wall clock. Unfortunately for many people (including me) who grew up surrounded by digital devices, the analog clock has not fully been phased out in the real world.
