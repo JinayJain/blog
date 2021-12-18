@@ -58,6 +58,7 @@ a {
     color: #114b5fff; }
 
 .newsletter {
+  margin-top: 1rem;
   padding: 1.5rem;
   border-radius: 1rem;
   background-color: #1a936fff;
