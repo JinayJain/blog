@@ -34,7 +34,7 @@ However, this dataset seemed to primarily cover what is called the "object segme
 
 An example of object segmentation labels from COCO {.caption}
 
-For my purposes, I only needed a simple bounding box around the clock, so I searched for a bounding box model that had been trained on COCO. The [torchvision](https://pytorch.org/vision/stable/index.html) package has several models that can do object detection, but what I ultimately ended up choosing was the [Faster R-CNN](https://arxiv.org/abs/1506.01497) with a [ResNet50](https://arxiv.org/abs/1512.03385) backbone. Both of these choices are pretty standard for object detection, and torchvision had a simple API to use them. All in all, the code for finding clock bounding boxes with the Faster R-CNN model was laughably simple:
+For my purposes, I only needed a simple bounding box around the clock, so I searched for a bounding box model that had been trained on COCO. The [torchvision](https://pytorch.org/vision/stable/index.html) package has several models that can do object detection, but what I ultimately ended up choosing was the [Faster R-CNN](https://arxiv.org/abs/1506.01497) with a [ResNet50](https://arxiv.org/abs/1512.03385) backbone. Both of these choices are pretty standard for object detection, and torchvision had a simple API to use them. All in all, the code for finding clock bounding boxes with the Faster R-CNN model was comparatively simple:
 
 [`detection.py`](https://github.com/JinayJain/timekeeper/blob/master/detection.py)
 
