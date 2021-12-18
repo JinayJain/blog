@@ -58,6 +58,7 @@ a {
     color: #114b5fff; }
 
 .newsletter {
+  margin-top: 1rem;
   padding: 1.5rem;
   border-radius: 1rem;
   background-color: #1a936fff;
@@ -174,7 +175,9 @@ img {
 
 .caption {
   text-align: center;
-  font-style: italic; }
+  font-style: italic;
+  max-width: 60%;
+  margin: auto; }
 
 blockquote {
   font-style: italic; }

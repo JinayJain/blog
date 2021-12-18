@@ -144,4 +144,36 @@ However, this estimate was susceptible to slight errors, since an hour hand near
 
 Once I had $h$ and $m$, the process was complete---I could tell the time!
 
+# Conclusion
+
+I don't expect this project to be massively useful in practice, but it was still an enriching experience in learning about deep learning and computer vision. The idea for this project came from Ethan Rosenthal's [optimal banana slicing project](https://www.ethanrosenthal.com/2020/08/25/optimal-peanut-butter-and-banana-sandwiches/), which gave an in-depth look into how he optimized his peanut butter and banana sandwich building. In the absence of practical ideas, I used the Timekeeper as a way to refine my skills in AI and explore the combination of classical and deep computer vision.
+
+Check out the [source code](https://github.com/JinayJain/timekeeper) for a full understanding of the project.
+
 # Results
+
+And now, let's see how well the program performs on various test images.
+
+![result 1](/images/result_clock1.png)
+
+Correctly finds the clock, its hands, and predicts 10:08! {.caption}
+
+![result 2](/images/result_clock2.png)
+
+Another relatively easy image, with slightly more tapered hands {.caption}
+
+![result 3](/images/result_clock3.png)
+
+It even works without markings on the clock! {.caption}
+
+## Failure Cases
+
+It would be disingenuous to show only the success cases, so here are some places where the program failed to tell the time correctly.
+
+![failure 1](/images/result_failure1.png)
+
+It fails to find the minute hand, likely due to how I tuned the edge detection. Also, I'm not sure which clock I should trust in this picture. {.caption}
+
+![failure 2](/images/result_failure2.png)
+
+I'm not even going to try to explain this one. {.caption}
